@@ -4,7 +4,7 @@
 PlayerSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 14
-  productGUID: dfb42d479eb7f3b469ede009735a1173
+  productGUID: 16fea67a5f8a18446b6a77680bfdcd96
   AndroidProfiler: 0
   AndroidFilterTouchesWhenObscured: 0
   defaultScreenOrientation: 4
@@ -634,9 +634,9 @@ PlayerSettings:
     UNet: 1
   facebookSdkVersion: 7.9.4
   apiCompatibilityLevel: 2
-  cloudProjectId: b5d51ec6-66e1-4c62-8750-1893f914743c
+  cloudProjectId: 90c6808e-ae84-429b-92e2-8bdacc0b4a6f
   projectName: SpellingTestUnity
-  organizationId: yuchingho
+  organizationId: dyanek
   cloudEnabled: 0
   enableNativePlatformBackendsForNewInputSystem: 0
   disableOldInputManagerSupport: 0
