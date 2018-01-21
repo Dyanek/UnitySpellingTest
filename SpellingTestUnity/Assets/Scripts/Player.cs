@@ -1,10 +1,11 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class Player : MonoBehaviour
 {
     private float speed = 7;
+
+    public GameObject attackParticlePrefab;
+    public Transform attackParticleSpawn;
 
     // Use this for initialization
     void Start()
@@ -15,12 +16,31 @@ public class Player : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        Movement();
+
+        if (Input.GetKeyDown(KeyCode.Space))
+            Fire();
+    }
+
+    void Fire()
+    {
+        GameObject attackParticle = Instantiate(attackParticlePrefab, transform);
+
+        // Add velocity to the bullet
+        attackParticle.GetComponent<Rigidbody>().velocity = attackParticle.transform.forward * 6;
+
+        // Destroy the bullet after 2 seconds
+        Destroy(attackParticle, 0.5f);
+    }
+
+    void Movement()
+    {
         //Get the touch pressed
         float axisX = Input.GetAxis("Horizontal");
         float axisY = Input.GetAxis("Vertical");
 
         transform.Translate(new Vector3(axisX, axisY) * Time.deltaTime * speed);
-        
+
         //Blocks movement at the edge of the screen
         if (transform.position.x <= -10.6f)
             transform.position = new Vector2(-10.6f, transform.position.y);
@@ -30,6 +50,6 @@ public class Player : MonoBehaviour
         if (transform.position.y <= -4.4f)
             transform.position = new Vector2(transform.position.x, -4.4f);
         else if (transform.position.y >= 4.4f)
-            transform.position = new Vector2(transform.position.x, 4.4f);       
+            transform.position = new Vector2(transform.position.x, 4.4f);
     }
 }
