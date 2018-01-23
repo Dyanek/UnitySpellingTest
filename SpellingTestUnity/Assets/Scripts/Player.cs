@@ -24,13 +24,8 @@ public class Player : MonoBehaviour
 
     void Fire()
     {
-        GameObject attackParticle = Instantiate(attackParticlePrefab, transform);
-
-        // Add velocity to the bullet
-        attackParticle.GetComponent<Rigidbody>().velocity = attackParticle.transform.forward * 6;
-
-        // Destroy the bullet after 2 seconds
-        Destroy(attackParticle, 0.5f);
+        GameObject attackParticle = Instantiate(attackParticlePrefab, new Vector3(transform.position.x, transform.position.y), new Quaternion());
+        Destroy(attackParticle, 2f);
     }
 
     void Movement()
@@ -42,14 +37,14 @@ public class Player : MonoBehaviour
         transform.Translate(new Vector3(axisX, axisY) * Time.deltaTime * speed);
 
         //Blocks movement at the edge of the screen
-        if (transform.position.x <= -10.6f)
-            transform.position = new Vector2(-10.6f, transform.position.y);
-        else if (transform.position.x >= 10.6f)
-            transform.position = new Vector2(10.6f, transform.position.y);
+        if (transform.position.x < -4.9f)
+            transform.position = new Vector2(-4.9f, transform.position.y);
+        else if (transform.position.x > 4.9f)
+            transform.position = new Vector2(4.9f, transform.position.y);
 
-        if (transform.position.y <= -4.4f)
-            transform.position = new Vector2(transform.position.x, -4.4f);
-        else if (transform.position.y >= 4.4f)
-            transform.position = new Vector2(transform.position.x, 4.4f);     
+        if (transform.position.y < -0.8f)
+            transform.position = new Vector2(transform.position.x, -0.8f);
+        else if (transform.position.y > 4.8f)
+            transform.position = new Vector2(transform.position.x, 4.8f);
     }
 }
