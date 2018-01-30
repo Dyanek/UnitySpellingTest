@@ -1,33 +1,37 @@
 fileFormatVersion: 2
-guid: 110eb5319b3669c4ebff03630bc4e0af
-timeCreated: 1517143862
+guid: 893300b486327624c9dbc523d4c0edaa
+timeCreated: 1517318158
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
-    21300000: fireWizardAttack_0
-    21300002: fireWizardAttack_2
-    21300004: fireWizardAttack_4
-    21300006: fireWizardAttack_6
-    21300008: fireWizardAttack_7
-    21300010: fireWizardAttack_9
-    21300012: fireWizardAttack_11
-    21300014: fireWizardAttack_13
-    21300016: fireWizardAttack_14
-    21300018: fireWizardAttack_16
-    21300020: fireWizardAttack_18
-    21300022: fireWizardAttack_20
-    21300024: fireWizardAttack_21
-    21300026: fireWizardAttack_22
-    21300028: fireWizardAttack_23
-    21300030: fireWizardAttack_25
-    21300032: fireWizardAttack_27
-    21300034: fireWizardAttack_28
-    21300036: fireWizardAttack_29
-    21300038: fireWizardAttack_30
-    21300040: fireWizardAttack_31
-    21300042: fireWizardAttack_32
-    21300044: fireWizardAttack_33
-    21300046: fireWizardAttack_34
+    21300000: fire_wizard_spritesheet_0
+    21300002: fire_wizard_spritesheet_1
+    21300004: fire_wizard_spritesheet_2
+    21300006: fire_wizard_spritesheet_3
+    21300008: fire_wizard_spritesheet_4
+    21300010: fire_wizard_spritesheet_5
+    21300012: fire_wizard_spritesheet_6
+    21300014: fire_wizard_spritesheet_7
+    21300016: fire_wizard_spritesheet_8
+    21300018: fire_wizard_spritesheet_9
+    21300020: fire_wizard_spritesheet_10
+    21300022: fire_wizard_spritesheet_11
+    21300024: fire_wizard_spritesheet_12
+    21300026: fire_wizard_spritesheet_13
+    21300028: fire_wizard_spritesheet_14
+    21300030: fire_wizard_spritesheet_15
+    21300032: fire_wizard_spritesheet_16
+    21300034: fire_wizard_spritesheet_17
+    21300036: fire_wizard_spritesheet_18
+    21300038: fire_wizard_spritesheet_19
+    21300040: fire_wizard_spritesheet_20
+    21300042: fire_wizard_spritesheet_21
+    21300044: fire_wizard_spritesheet_22
+    21300046: fire_wizard_spritesheet_23
+    21300048: fire_wizard_spritesheet_24
+    21300050: fire_wizard_spritesheet_25
+    21300052: fire_wizard_spritesheet_26
+    21300054: fire_wizard_spritesheet_27
   externalObjects: {}
   serializedVersion: 4
   mipmaps:
@@ -70,7 +74,7 @@ TextureImporter:
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
-  spritePixelsToUnits: 32
+  spritePixelsToUnits: 100
   alphaUsage: 1
   alphaIsTransparency: 1
   spriteTessellationDetail: -1
@@ -104,7 +108,63 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: fireWizardAttack_0
+      name: fire_wizard_spritesheet_0
+      rect:
+        serializedVersion: 2
+        x: 8
+        y: 192
+        width: 16
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: fire_wizard_spritesheet_1
+      rect:
+        serializedVersion: 2
+        x: 40
+        y: 192
+        width: 16
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: fire_wizard_spritesheet_2
+      rect:
+        serializedVersion: 2
+        x: 72
+        y: 192
+        width: 16
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: fire_wizard_spritesheet_3
+      rect:
+        serializedVersion: 2
+        x: 104
+        y: 192
+        width: 16
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: fire_wizard_spritesheet_4
       rect:
         serializedVersion: 2
         x: 8
@@ -118,7 +178,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: fireWizardAttack_2
+      name: fire_wizard_spritesheet_5
       rect:
         serializedVersion: 2
         x: 40
@@ -132,7 +192,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: fireWizardAttack_4
+      name: fire_wizard_spritesheet_6
       rect:
         serializedVersion: 2
         x: 72
@@ -146,7 +206,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: fireWizardAttack_6
+      name: fire_wizard_spritesheet_7
       rect:
         serializedVersion: 2
         x: 104
@@ -160,7 +220,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: fireWizardAttack_7
+      name: fire_wizard_spritesheet_8
       rect:
         serializedVersion: 2
         x: 8
@@ -174,7 +234,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: fireWizardAttack_9
+      name: fire_wizard_spritesheet_9
       rect:
         serializedVersion: 2
         x: 40
@@ -188,7 +248,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: fireWizardAttack_11
+      name: fire_wizard_spritesheet_10
       rect:
         serializedVersion: 2
         x: 72
@@ -202,7 +262,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: fireWizardAttack_13
+      name: fire_wizard_spritesheet_11
       rect:
         serializedVersion: 2
         x: 104
@@ -216,7 +276,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: fireWizardAttack_14
+      name: fire_wizard_spritesheet_12
       rect:
         serializedVersion: 2
         x: 8
@@ -230,7 +290,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: fireWizardAttack_16
+      name: fire_wizard_spritesheet_13
       rect:
         serializedVersion: 2
         x: 40
@@ -244,7 +304,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: fireWizardAttack_18
+      name: fire_wizard_spritesheet_14
       rect:
         serializedVersion: 2
         x: 72
@@ -258,7 +318,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: fireWizardAttack_20
+      name: fire_wizard_spritesheet_15
       rect:
         serializedVersion: 2
         x: 104
@@ -272,7 +332,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: fireWizardAttack_21
+      name: fire_wizard_spritesheet_16
       rect:
         serializedVersion: 2
         x: 8
@@ -286,21 +346,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: fireWizardAttack_22
-      rect:
-        serializedVersion: 2
-        x: 8
-        y: 0
-        width: 16
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: fireWizardAttack_23
+      name: fire_wizard_spritesheet_17
       rect:
         serializedVersion: 2
         x: 40
@@ -314,7 +360,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: fireWizardAttack_25
+      name: fire_wizard_spritesheet_18
       rect:
         serializedVersion: 2
         x: 72
@@ -328,7 +374,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: fireWizardAttack_27
+      name: fire_wizard_spritesheet_19
       rect:
         serializedVersion: 2
         x: 104
@@ -342,7 +388,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: fireWizardAttack_28
+      name: fire_wizard_spritesheet_20
       rect:
         serializedVersion: 2
         x: 8
@@ -356,21 +402,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: fireWizardAttack_29
-      rect:
-        serializedVersion: 2
-        x: 40
-        y: 0
-        width: 16
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: fireWizardAttack_30
+      name: fire_wizard_spritesheet_21
       rect:
         serializedVersion: 2
         x: 40
@@ -384,21 +416,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: fireWizardAttack_31
-      rect:
-        serializedVersion: 2
-        x: 72
-        y: 0
-        width: 16
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: fireWizardAttack_32
+      name: fire_wizard_spritesheet_22
       rect:
         serializedVersion: 2
         x: 72
@@ -412,10 +430,24 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: fireWizardAttack_33
+      name: fire_wizard_spritesheet_23
       rect:
         serializedVersion: 2
         x: 104
+        y: 32
+        width: 16
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: fire_wizard_spritesheet_24
+      rect:
+        serializedVersion: 2
+        x: 8
         y: 0
         width: 16
         height: 32
@@ -426,11 +458,39 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: fireWizardAttack_34
+      name: fire_wizard_spritesheet_25
+      rect:
+        serializedVersion: 2
+        x: 40
+        y: 0
+        width: 16
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: fire_wizard_spritesheet_26
+      rect:
+        serializedVersion: 2
+        x: 72
+        y: 0
+        width: 16
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: fire_wizard_spritesheet_27
       rect:
         serializedVersion: 2
         x: 104
-        y: 32
+        y: 0
         width: 16
         height: 32
       alignment: 0
