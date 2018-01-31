@@ -36,6 +36,7 @@
             <taskproperty id="tpc0" name="Week" type="custom" valuetype="text"/>
         </taskproperties>
         <task id="39" name="Tutorial" color="#8cb6ce" meeting="false" start="2018-01-10" duration="11" complete="0" expand="true"/>
+        <task id="40" name="FireBattle" color="#8cb6ce" meeting="false" start="2018-01-24" duration="11" complete="0" expand="true"/>
     </tasks>
     <resources/>
     <allocations/>
