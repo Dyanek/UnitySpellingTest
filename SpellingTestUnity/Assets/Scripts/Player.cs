@@ -4,15 +4,17 @@ public class Player : MonoBehaviour
 {
     private float speed = 5f;
 
+    [SerializeField] public float LeftEdge;
+    [SerializeField] public float RightEdge;
+    [SerializeField] public float BottomEdge;
+    [SerializeField] public float TopEdge;
+
     private Animator animator;
 
     public GameObject attackParticlePrefab;
     public Transform attackParticleSpawn;
 
-    [SerializeField] public float LeftEdge;
-    [SerializeField] public float RightEdge;
-    [SerializeField] public float BottomEdge;
-    [SerializeField] public float TopEdge;
+
 
     void Start()
     {
@@ -24,12 +26,12 @@ public class Player : MonoBehaviour
         Movement();
 
         if (Input.GetKeyDown(KeyCode.Space))
-            Fire();
+            Attack();
         else if (animator.GetBool("Attack") == true)
             animator.SetBool("Attack", false);
     }
 
-    void Fire()
+    void Attack()
     {
         animator.SetBool("Attack", true);
         GameObject attackParticle = Instantiate(attackParticlePrefab, new Vector2(transform.position.x, transform.position.y), new Quaternion());
