@@ -1,4 +1,6 @@
 ﻿using System.Collections;
+using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 public class FireWizard : MonoBehaviour
@@ -21,12 +23,16 @@ public class FireWizard : MonoBehaviour
     private float attackTimer;
     private float attackCd = 1f;
 
+    private List<KeyValuePair<GameObject, Vector2>> attackParticlesList;
+
     void Start()
     {
         movementTimer = movementCd;
         DefineMovementVector();
 
         attackTimer = attackCd;
+
+        attackParticlesList = new List<KeyValuePair<GameObject, Vector2>>();
     }
 
     void Update()
@@ -37,14 +43,20 @@ public class FireWizard : MonoBehaviour
             {
                 attackTimer -= Time.deltaTime;
                 Movements();
+
+                IEnumerable enumerator = attackParticlesList.Where(kvp => kvp.Key != null);
+
+                foreach(KeyValuePair<GameObject, Vector2> kvp in enumerator)
+                {
+                    kvp.Key.transform.Translate(kvp.Value * Time.deltaTime * 5f);
+                }
             }
             else
                 isAttacking = true;
         }
         else
         {
-            //for (float i = -2; i <= 2; i++)
-                Attack();
+            Attack();
             isAttacking = false;
             attackTimer = attackCd;
         }
@@ -53,10 +65,11 @@ public class FireWizard : MonoBehaviour
     public void Attack()
     {
         GameObject attackParticle = Instantiate(attackParticlePrefab, new Vector2(transform.position.x, transform.position.y), new Quaternion());
-        //attackParticle.transform.Translate(new Vector2(-0.5f, 0));
-
-        //GameObject attackParticle = Instantiate(attackParticlePrefab, new Vector2(transform.position.x, transform.position.y), new Quaternion());
         Destroy(attackParticle, 2f);
+
+        Vector2 particleVector = new Vector2(-0.5f, -0.5f);
+
+        attackParticlesList.Add(new KeyValuePair<GameObject, Vector2>(attackParticle, particleVector));
     }
 
     public void Movements()
