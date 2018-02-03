@@ -243,6 +243,10 @@ MonoBehaviour:
   attackParticlePrefab: {fileID: 1349947998817766, guid: f9b1b0ac6d9120b428beb8487e1187fe,
     type: 2}
   attackParticleSpawn: {fileID: 0}
+  LeftEdge: -6.2
+  RightEdge: 6.2
+  BottomEdge: -0.8
+  TopEdge: 0.3
 --- !u!212 &833225712
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -294,7 +298,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 833225709}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.69, z: 0}
+  m_LocalPosition: {x: 0, y: -0.31, z: 0}
   m_LocalScale: {x: 1.25, y: 1.25, z: 1.25}
   m_Children: []
   m_Father: {fileID: 0}
@@ -519,7 +523,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1625443092}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.02, y: 4.44, z: 0}
+  m_LocalPosition: {x: 0, y: 4.44, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -536,6 +540,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3e8837d441274284daa8ce9b42f1c4b3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  LeftEdge: -6.2
+  RightEdge: 6.2
+  BottomEdge: 3.92
+  TopEdge: 4.83
 --- !u!1 &1740392432
 GameObject:
   m_ObjectHideFlags: 0

@@ -9,6 +9,11 @@ public class Player : MonoBehaviour
     public GameObject attackParticlePrefab;
     public Transform attackParticleSpawn;
 
+    [SerializeField] public float LeftEdge;
+    [SerializeField] public float RightEdge;
+    [SerializeField] public float BottomEdge;
+    [SerializeField] public float TopEdge;
+
     void Start()
     {
         animator = gameObject.GetComponent<Animator>();
@@ -27,7 +32,7 @@ public class Player : MonoBehaviour
     void Fire()
     {
         animator.SetBool("Attack", true);
-        GameObject attackParticle = Instantiate(attackParticlePrefab, new Vector3(transform.position.x, transform.position.y), new Quaternion());
+        GameObject attackParticle = Instantiate(attackParticlePrefab, new Vector2(transform.position.x, transform.position.y), new Quaternion());
         Destroy(attackParticle, 2f);
     }
 
@@ -37,20 +42,20 @@ public class Player : MonoBehaviour
         float axisX = Input.GetAxis("Horizontal");
         float axisY = Input.GetAxis("Vertical");
 
-        transform.Translate(new Vector3(axisX, axisY) * Time.deltaTime * speed);
+        transform.Translate(new Vector2(axisX, axisY) * Time.deltaTime * speed);
 
         animator.SetFloat("HorizontalSpeed", axisX);
         animator.SetFloat("VerticalSpeed", axisY);
 
         //Blocks movement at the edge of the screen
-        if (transform.position.x < -4.9f)
-            transform.position = new Vector2(-4.9f, transform.position.y);
-        else if (transform.position.x > 4.9f)
-            transform.position = new Vector2(4.9f, transform.position.y);
+        if (transform.position.x < LeftEdge)
+            transform.position = new Vector2(LeftEdge, transform.position.y);
+        else if (transform.position.x > RightEdge)
+            transform.position = new Vector2(RightEdge, transform.position.y);
 
-        if (transform.position.y < -0.8f)
-            transform.position = new Vector2(transform.position.x, -0.8f);
-        else if (transform.position.y > 4.8f)
-            transform.position = new Vector2(transform.position.x, 4.8f);
+        if (transform.position.y < BottomEdge)
+            transform.position = new Vector2(transform.position.x, BottomEdge);
+        else if (transform.position.y > TopEdge)
+            transform.position = new Vector2(transform.position.x, TopEdge);
     }
 }
