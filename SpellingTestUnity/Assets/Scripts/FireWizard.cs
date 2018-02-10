@@ -1,5 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 
@@ -22,13 +21,17 @@ public class FireWizard : MonoBehaviour
     private bool isAttacking = false;
     private float attackTimer;
     private float attackCd = 1f;
+    private float basicAttacksCount = 0;
+    private float uniqueAttackTimer;
+    private float uniqueAttackCd = 0.3f;
+    private float uniqueAttackCount = 0;
 
     private List<KeyValuePair<GameObject, Vector2>> attackParticlesList;
 
     void Start()
     {
         movementTimer = movementCd;
-        DefineMovementVector();
+        movementVector = DefineMovementVector();
 
         attackTimer = attackCd;
 
@@ -37,39 +40,79 @@ public class FireWizard : MonoBehaviour
 
     void Update()
     {
-        if (!isAttacking)
+        //Deletes every destroyed particle from the list
+        attackParticlesList = attackParticlesList.Where(kvp => kvp.Key != null).ToList();
+
+        foreach (KeyValuePair<GameObject, Vector2> kvp in attackParticlesList)
+            kvp.Key.transform.Translate(kvp.Value * Time.deltaTime * 5f);
+
+        if (!isAttacking && attackTimer > 0)
         {
-            if (attackTimer > 0)
-            {
-                attackTimer -= Time.deltaTime;
-                Movements();
-
-                IEnumerable enumerator = attackParticlesList.Where(kvp => kvp.Key != null);
-
-                foreach(KeyValuePair<GameObject, Vector2> kvp in enumerator)
-                {
-                    kvp.Key.transform.Translate(kvp.Value * Time.deltaTime * 5f);
-                }
-            }
-            else
-                isAttacking = true;
+            Movements();
+            attackTimer -= Time.deltaTime;
         }
         else
         {
-            Attack();
-            isAttacking = false;
-            attackTimer = attackCd;
+            if (!isAttacking && basicAttacksCount < 3)
+            {
+                BasicAttack();
+                attackTimer = attackCd;
+            }
+            else
+            {
+                basicAttacksCount = 0;
+
+                if (!isAttacking)
+                    isAttacking = true;
+
+                if (uniqueAttackTimer > 0)
+                    uniqueAttackTimer -= Time.deltaTime;
+                else
+                {
+                    UniqueAttack();
+                    uniqueAttackTimer = uniqueAttackCd;
+                }
+
+                if (uniqueAttackCount == 3)
+                {
+                    uniqueAttackCount = 0;
+                    attackTimer = attackCd;
+                    isAttacking = false;
+                }
+            }
         }
     }
 
-    public void Attack()
+    public void BasicAttack()
+    {
+        basicAttacksCount++;
+
+        //The basic attack particle direction is defined by [player's position - firewizard position]. The particle's speed is defined in the Update function
+        Vector2 particleVector = GameObject.FindGameObjectWithTag("Player").transform.position - transform.position;
+        particleVector.x /= 3;
+        particleVector.y /= 3;
+
+        attackParticlesList.Add(CreateAttackParticle(2f, particleVector));
+    }
+
+    public void UniqueAttack()
+    {
+        uniqueAttackCount++;  
+
+        for(float f = -0.6f; f <= 0.6f; f += 0.2f)
+        {
+            Vector2 particleVector = new Vector2(f, -0.5f);
+
+            attackParticlesList.Add(CreateAttackParticle(4f, particleVector));
+        }     
+    }
+
+    public KeyValuePair<GameObject, Vector2> CreateAttackParticle(float lifeSpan, Vector2 particleVector)
     {
         GameObject attackParticle = Instantiate(attackParticlePrefab, new Vector2(transform.position.x, transform.position.y), new Quaternion());
-        Destroy(attackParticle, 2f);
+        Destroy(attackParticle, lifeSpan);
 
-        Vector2 particleVector = new Vector2(-0.5f, -0.5f);
-
-        attackParticlesList.Add(new KeyValuePair<GameObject, Vector2>(attackParticle, particleVector));
+        return new KeyValuePair<GameObject, Vector2>(attackParticle, particleVector);
     }
 
     public void Movements()
@@ -105,12 +148,12 @@ public class FireWizard : MonoBehaviour
         else
         {
             movementTimer = movementCd;
-            DefineMovementVector();
+            movementVector = DefineMovementVector();
         }
     }
 
-    public void DefineMovementVector()
+    public Vector2 DefineMovementVector()
     {
-        movementVector = new Vector2(Random.Range(-0.5f, 0.5f), Random.Range(-0.3f, 0.3f));
+        return new Vector2(Random.Range(-0.5f, 0.5f), Random.Range(-0.3f, 0.3f));
     }
 }
