@@ -9,6 +9,8 @@ public class Player : MonoBehaviour
     [SerializeField] public float BottomEdge;
     [SerializeField] public float TopEdge;
 
+    [SerializeField] public bool EnableShoot;
+
     private Animator animator;
 
     public GameObject attackParticlePrefab;
@@ -25,10 +27,13 @@ public class Player : MonoBehaviour
     {
         Movement();
 
-        if (Input.GetKeyDown(KeyCode.Space))
-            Attack();
-        else if (animator.GetBool("Attack") == true)
-            animator.SetBool("Attack", false);
+        if (EnableShoot)
+        {
+            if (Input.GetKeyDown(KeyCode.Space))
+                Attack();
+            else if (animator.GetBool("Attack") == true)
+                animator.SetBool("Attack", false);
+        }
     }
 
     void Attack()
