@@ -8,10 +8,12 @@ public class FireWizard : MonoBehaviour
     private float movementTimer;
     private float movementCd = 1f;
 
-    [SerializeField] public float LeftEdge;
-    [SerializeField] public float RightEdge;
-    [SerializeField] public float BottomEdge;
-    [SerializeField] public float TopEdge;
+    [SerializeField] private float leftEdge;
+    [SerializeField] private float rightEdge;
+    [SerializeField] private float bottomEdge;
+    [SerializeField] private float topEdge;
+
+    private Animator animator;
 
     private Vector2 movementVector;
 
@@ -36,6 +38,8 @@ public class FireWizard : MonoBehaviour
         attackTimer = attackCd;
 
         attackParticlesList = new List<KeyValuePair<GameObject, Vector2>>();
+
+        animator = gameObject.GetComponent<Animator>();
     }
 
     void Update()
@@ -48,6 +52,9 @@ public class FireWizard : MonoBehaviour
 
         if (!isAttacking && attackTimer > 0)
         {
+            if (animator.GetBool("Attack"))
+                animator.SetBool("Attack", false);
+
             Movements();
             attackTimer -= Time.deltaTime;
         }
@@ -85,6 +92,8 @@ public class FireWizard : MonoBehaviour
 
     public void BasicAttack()
     {
+        animator.SetBool("Attack", true);
+
         basicAttacksCount++;
 
         //The basic attack particle direction is defined by [player's position - firewizard position]. The particle's speed is defined in the Update function
@@ -97,6 +106,8 @@ public class FireWizard : MonoBehaviour
 
     public void UniqueAttack()
     {
+        animator.SetBool("Attack", true);
+
         uniqueAttackCount++;  
 
         for(float f = -0.6f; f <= 0.6f; f += 0.2f)
@@ -119,29 +130,32 @@ public class FireWizard : MonoBehaviour
     {
         if (movementTimer > 0)
         {
+            animator.SetFloat("HorizontalSpeed", movementVector.x);
+            animator.SetFloat("VerticalSpeed", movementVector.y);
+
             movementTimer -= Time.deltaTime;
             transform.Translate(movementVector * Time.deltaTime * speed);
 
             //Blocks movement at the edge of the screen
-            if (transform.position.x < LeftEdge)
+            if (transform.position.x < leftEdge)
             {
-                transform.position = new Vector2(LeftEdge, transform.position.y);
+                transform.position = new Vector2(leftEdge, transform.position.y);
                 movementVector.x = -movementVector.x;
             }
-            else if (transform.position.x > RightEdge)
+            else if (transform.position.x > rightEdge)
             {
-                transform.position = new Vector2(RightEdge, transform.position.y);
+                transform.position = new Vector2(rightEdge, transform.position.y);
                 movementVector.x = -movementVector.x;
             }
 
-            if (transform.position.y < BottomEdge)
+            if (transform.position.y < bottomEdge)
             {
-                transform.position = new Vector2(transform.position.x, BottomEdge);
+                transform.position = new Vector2(transform.position.x, bottomEdge);
                 movementVector.y = -movementVector.y;
             }
-            else if (transform.position.y > TopEdge)
+            else if (transform.position.y > topEdge)
             {
-                transform.position = new Vector2(transform.position.x, TopEdge);
+                transform.position = new Vector2(transform.position.x, topEdge);
                 movementVector.y = -movementVector.y;
             }
         }

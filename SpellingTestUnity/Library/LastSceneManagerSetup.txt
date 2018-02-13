@@ -1,4 +1,4 @@
 sceneSetups:
-- path: Assets/Scenes/FirePuzzle.unity
+- path: Assets/Scenes/FireBattle.unity
   isLoaded: 1
   isActive: 1

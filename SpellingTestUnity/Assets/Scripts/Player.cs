@@ -4,12 +4,12 @@ public class Player : MonoBehaviour
 {
     private float speed = 5f;
 
-    [SerializeField] public float LeftEdge;
-    [SerializeField] public float RightEdge;
-    [SerializeField] public float BottomEdge;
-    [SerializeField] public float TopEdge;
+    [SerializeField] private float leftEdge;
+    [SerializeField] private float rightEdge;
+    [SerializeField] private float bottomEdge;
+    [SerializeField] private float topEdge;
 
-    [SerializeField] public bool EnableShoot;
+    [SerializeField] private bool enableShoot;
 
     private Animator animator;
 
@@ -27,7 +27,7 @@ public class Player : MonoBehaviour
     {
         Movement();
 
-        if (EnableShoot)
+        if (enableShoot)
         {
             if (Input.GetKeyDown(KeyCode.Space))
                 Attack();
@@ -55,14 +55,14 @@ public class Player : MonoBehaviour
         animator.SetFloat("VerticalSpeed", axisY);
 
         //Blocks movement at the edge of the screen
-        if (transform.position.x < LeftEdge)
-            transform.position = new Vector2(LeftEdge, transform.position.y);
-        else if (transform.position.x > RightEdge)
-            transform.position = new Vector2(RightEdge, transform.position.y);
+        if (transform.position.x < leftEdge)
+            transform.position = new Vector2(leftEdge, transform.position.y);
+        else if (transform.position.x > rightEdge)
+            transform.position = new Vector2(rightEdge, transform.position.y);
 
-        if (transform.position.y < BottomEdge)
-            transform.position = new Vector2(transform.position.x, BottomEdge);
-        else if (transform.position.y > TopEdge)
-            transform.position = new Vector2(transform.position.x, TopEdge);
+        if (transform.position.y < bottomEdge)
+            transform.position = new Vector2(transform.position.x, bottomEdge);
+        else if (transform.position.y > topEdge)
+            transform.position = new Vector2(transform.position.x, topEdge);
     }
 }

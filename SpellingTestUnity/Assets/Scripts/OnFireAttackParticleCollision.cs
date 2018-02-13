@@ -7,7 +7,7 @@ public class OnFireAttackParticleCollision : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.tag != "attackParticle")
+        if (collision.gameObject.tag != "AttackParticle" && collision.gameObject.tag != "EnemyWizard")
             Destroy(gameObject);
     }
 }

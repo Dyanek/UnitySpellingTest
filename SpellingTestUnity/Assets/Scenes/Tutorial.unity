@@ -797,11 +797,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 580e475ff19b72f48a171725cab13c95, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  LeftEdge: -6.2
-  RightEdge: 6.2
-  BottomEdge: -0.8
-  TopEdge: 4.8
-  EnableShoot: 1
+  leftEdge: -5.9
+  rightEdge: 5.9
+  bottomEdge: -0.75
+  topEdge: 4.75
+  enableShoot: 0
   attackParticlePrefab: {fileID: 1349947998817766, guid: f9b1b0ac6d9120b428beb8487e1187fe,
     type: 2}
   attackParticleSpawn: {fileID: 0}
