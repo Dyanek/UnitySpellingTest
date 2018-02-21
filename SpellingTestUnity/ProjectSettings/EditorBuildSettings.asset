@@ -6,14 +6,17 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/Scenes/MainMenu.unity
+    guid: 8846ac738ddd7a14388e13e6204de447
+  - enabled: 1
+    path: Assets/Scenes/Tutorial.unity
+    guid: 25b533d864917384293775b7428e98c2
+  - enabled: 1
     path: Assets/Scenes/FirePuzzle.unity
     guid: 6799244c01389b948ad4d3ea4d41daa9
   - enabled: 1
     path: Assets/Scenes/FireBattle.unity
     guid: 28490a50033c347469ba68f10493a559
-  - enabled: 1
-    path: Assets/Scenes/Tutorial.unity
-    guid: 25b533d864917384293775b7428e98c2
   - enabled: 1
     path: Assets/Scenes/WaterBattle.unity
     guid: 866c3830b9414994096baa150651f212
