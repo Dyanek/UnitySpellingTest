@@ -9,6 +9,7 @@ public class Player : MonoBehaviour
     [SerializeField] private float bottomEdge;
     [SerializeField] private float topEdge;
 
+    [SerializeField] private bool enableMovements;
     [SerializeField] private bool enableShoot;
 
     private Animator animator;
@@ -25,7 +26,8 @@ public class Player : MonoBehaviour
 
     void Update()
     {
-        Movement();
+        if (enableMovements)
+            Movement();
 
         if (enableShoot)
         {

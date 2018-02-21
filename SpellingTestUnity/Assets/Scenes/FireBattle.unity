@@ -245,6 +245,7 @@ MonoBehaviour:
   rightEdge: 5.9
   bottomEdge: -0.75
   topEdge: 0.3
+  enableMovements: 1
   enableShoot: 1
   attackParticlePrefab: {fileID: 1349947998817766, guid: f9b1b0ac6d9120b428beb8487e1187fe,
     type: 2}
