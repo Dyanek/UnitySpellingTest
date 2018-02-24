@@ -2,9 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class OnFireAttackParticleCollision : MonoBehaviour
-{
-
+public class OnEnemyAttackParticleCollision : MonoBehaviour
+{ 
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.tag != "AttackParticle" && collision.gameObject.tag != "EnemyWizard")
