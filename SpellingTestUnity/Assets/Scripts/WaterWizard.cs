@@ -14,7 +14,7 @@ public class WaterWizard : MonoBehaviour
     [SerializeField] private float bottomEdge;
     [SerializeField] private float topEdge;
 
-    //private Animator animator;
+    private Animator animator;
 
     private Vector2 movementVector;
 
@@ -35,10 +35,11 @@ public class WaterWizard : MonoBehaviour
     private float attackCd = 1f;
     private float basicAttacksCount = 0;
     private float uniqueAttackTimer;
-    private float uniqueAttackCd = 0.3f;
+    private float uniqueAttackCd = 0.75f;
     private float uniqueAttackCount = 0;
 
     private List<KeyValuePair<GameObject, Vector2>> attackParticlesList;
+    private float attackAngle;
 
     void Start()
     {
@@ -49,7 +50,7 @@ public class WaterWizard : MonoBehaviour
 
         attackParticlesList = new List<KeyValuePair<GameObject, Vector2>>();
 
-        //animator = gameObject.GetComponent<Animator>();
+        animator = gameObject.GetComponent<Animator>();
     }
 
     void Update()
@@ -62,8 +63,8 @@ public class WaterWizard : MonoBehaviour
 
         if (!isAttacking && attackTimer > 0)
         {
-            //if (animator.GetBool("Attack"))
-            //    animator.SetBool("Attack", false);
+            if (animator.GetBool("Attack"))
+                animator.SetBool("Attack", false);
 
             Movements();
             attackTimer -= Time.deltaTime;
@@ -90,7 +91,7 @@ public class WaterWizard : MonoBehaviour
                     uniqueAttackTimer = uniqueAttackCd;
                 }
 
-                if (uniqueAttackCount == 3)
+                if (uniqueAttackCount == 2)
                 {
                     uniqueAttackCount = 0;
                     attackTimer = attackCd;
@@ -102,7 +103,7 @@ public class WaterWizard : MonoBehaviour
 
     public void BasicAttack()
     {
-        //animator.SetBool("Attack", true);
+        animator.SetBool("Attack", true);
 
         basicAttacksCount++;
 
@@ -116,34 +117,36 @@ public class WaterWizard : MonoBehaviour
 
     public void UniqueAttack()
     {
-        //animator.SetBool("Attack", true);
+        animator.SetBool("Attack", true);
 
         uniqueAttackCount++;
 
-        Vector2 particleVector = new Vector2(0, 0);
+        if (uniqueAttackCount == 1)
+        {
+            GameObject attackParticle = Instantiate(uniqueAttackMarkPrefab, new Vector2(transform.position.x, transform.position.y), new Quaternion());
 
-        GameObject attackParticle = Instantiate(uniqueAttackMarkPrefab, new Vector2(transform.position.x, transform.position.y), new Quaternion());
-        //attackParticle.transform.Rotate(new Vector3(0, 0, -36f));
-        //*12.75
+            Vector3 playerPosition = GameObject.FindGameObjectWithTag("Player").transform.position;
 
-        //float xDifference;
-        //if (GameObject.FindGameObjectWithTag("Player").transform.position.x > transform.position.x)
-        //    xDifference = GameObject.FindGameObjectWithTag("Player").transform.position.x - transform.position.x;
-        //else
-        //    xDifference = transform.position.x - GameObject.FindGameObjectWithTag("Player").transform.position.x;
+            float yLength = Mathf.Sqrt((transform.position.y - playerPosition.y) * (transform.position.y - playerPosition.y));
+            float xLength = Mathf.Sqrt((transform.position.x - playerPosition.x) * (transform.position.x - playerPosition.x));
 
-        float xDifference;
+            attackAngle = (xLength / yLength) * (180f / Mathf.PI);
 
-        xDifference  =/* (GameObject.FindGameObjectWithTag("Player").transform.position.y - transform.position.y) /*/ (GameObject.FindGameObjectWithTag("Player").transform.position.x - transform.position.x);
+            if (transform.position.x > playerPosition.x)
+                attackAngle = -attackAngle;
 
-        if (GameObject.FindGameObjectWithTag("Player").transform.position.x > transform.position.x)
-            xDifference = -xDifference;
+            attackParticle.transform.Rotate(new Vector3(0, 0, attackAngle));
 
-        attackParticle.transform.Rotate(new Vector3(0, 0, xDifference));
+            Destroy(attackParticle, 0.75f);
+        }
+        else if(uniqueAttackCount == 2)
+        {
+            GameObject attackParticle = Instantiate(uniqueAttackParticlePrefab, new Vector2(transform.position.x, transform.position.y), new Quaternion());
 
-        Destroy(attackParticle, 2f);
+            attackParticle.transform.Rotate(new Vector3(0,0, attackAngle));
 
-        attackParticlesList.Add(new KeyValuePair<GameObject, Vector2>(attackParticle, particleVector));
+            Destroy(attackParticle, 0.75f);
+        }
     }
 
     public KeyValuePair<GameObject, Vector2> CreateAttackParticle(float lifeSpan, Vector2 particleVector)
@@ -158,8 +161,8 @@ public class WaterWizard : MonoBehaviour
     {
         if (movementTimer > 0)
         {
-            //animator.SetFloat("HorizontalSpeed", movementVector.x);
-            //animator.SetFloat("VerticalSpeed", movementVector.y);
+            animator.SetFloat("HorizontalSpeed", movementVector.x);
+            animator.SetFloat("VerticalSpeed", movementVector.y);
 
             movementTimer -= Time.deltaTime;
             transform.Translate(movementVector * Time.deltaTime * speed);

@@ -204,6 +204,7 @@ GameObject:
   - component: {fileID: 492397472}
   - component: {fileID: 492397471}
   - component: {fileID: 492397473}
+  - component: {fileID: 492397474}
   m_Layer: 0
   m_Name: WaterWizard
   m_TagString: EnemyWizard
@@ -292,6 +293,23 @@ MonoBehaviour:
   uniqueAttackParticlePrefab: {fileID: 1802522251311958, guid: ac377ec273f643b4a9e2bf2c8e562f0e,
     type: 2}
   uniqueAttackParticleSpawn: {fileID: 0}
+--- !u!95 &492397474
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 492397470}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: b35dd623b9427bd4a8c76ca43b2769b5, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
 --- !u!1 &833225709
 GameObject:
   m_ObjectHideFlags: 0
