@@ -202,10 +202,11 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 833225713}
-  - component: {fileID: 833225712}
-  - component: {fileID: 833225711}
-  - component: {fileID: 833225710}
   - component: {fileID: 833225714}
+  - component: {fileID: 833225712}
+  - component: {fileID: 833225710}
+  - component: {fileID: 833225711}
+  - component: {fileID: 833225715}
   m_Layer: 0
   m_Name: PlayerWizard
   m_TagString: Player
@@ -332,6 +333,19 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.16, y: 0.32}
   m_EdgeRadius: 0
+--- !u!114 &833225715
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 833225709}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5924e5e7c3de4384e90f3ef5f9c893ab, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  MaxHealth: 100
+  CurrentHealth: 0
 --- !u!1 &979755602
 GameObject:
   m_ObjectHideFlags: 0
@@ -491,10 +505,11 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 1625443094}
-  - component: {fileID: 1625443093}
-  - component: {fileID: 1625443095}
-  - component: {fileID: 1625443096}
   - component: {fileID: 1625443097}
+  - component: {fileID: 1625443093}
+  - component: {fileID: 1625443096}
+  - component: {fileID: 1625443095}
+  - component: {fileID: 1625443098}
   m_Layer: 0
   m_Name: FireWizard
   m_TagString: EnemyWizard
@@ -619,6 +634,19 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.16, y: 0.32}
   m_EdgeRadius: 0
+--- !u!114 &1625443098
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1625443092}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cb5cb434bce91d34c9d8c26b0268795c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  MaxHealth: 100
+  CurrentHealth: 0
 --- !u!1 &1740392432
 GameObject:
   m_ObjectHideFlags: 0

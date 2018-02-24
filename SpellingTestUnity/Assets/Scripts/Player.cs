@@ -17,8 +17,6 @@ public class Player : MonoBehaviour
     public GameObject attackParticlePrefab;
     public Transform attackParticleSpawn;
 
-
-
     void Start()
     {
         animator = gameObject.GetComponent<Animator>();
