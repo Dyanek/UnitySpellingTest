@@ -709,7 +709,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &529289530
 GameObject:
@@ -720,8 +720,8 @@ GameObject:
   m_Component:
   - component: {fileID: 529289532}
   - component: {fileID: 529289531}
-  - component: {fileID: 529289533}
   - component: {fileID: 529289534}
+  - component: {fileID: 529289533}
   m_Layer: 0
   m_Name: PlayerWizard
   m_TagString: Player
@@ -784,7 +784,7 @@ Transform:
   m_LocalScale: {x: 1.5, y: 1.5, z: 1.5}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &529289533
 MonoBehaviour:
@@ -801,6 +801,7 @@ MonoBehaviour:
   rightEdge: 5.9
   bottomEdge: -0.75
   topEdge: 4.75
+  enableMovements: 0
   enableShoot: 0
   attackParticlePrefab: {fileID: 1349947998817766, guid: f9b1b0ac6d9120b428beb8487e1187fe,
     type: 2}
@@ -1043,7 +1044,7 @@ Transform:
   m_Children:
   - {fileID: 41421184}
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &766645505
 GameObject:
@@ -1152,7 +1153,7 @@ Transform:
   - {fileID: 17534551}
   - {fileID: 1499490019}
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &959096867
 GameObject:
@@ -1910,7 +1911,7 @@ Transform:
   - {fileID: 1015168961}
   - {fileID: 1316424927}
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1740392432
 GameObject:
@@ -1996,7 +1997,7 @@ Transform:
   m_LocalScale: {x: 1.3825902, y: 1, z: 0.60629153}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: -270, y: -90.002014, z: 89.99799}
 --- !u!1 &2005447245
 GameObject:

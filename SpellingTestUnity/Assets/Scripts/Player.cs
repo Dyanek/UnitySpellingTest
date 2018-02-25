@@ -12,6 +12,15 @@ public class Player : MonoBehaviour
     [SerializeField] private bool enableMovements;
     [SerializeField] private bool enableShoot;
 
+    // Player Health
+    [SerializeField] private int MaxHealth;
+    [SerializeField] private int CurrentHealth;
+    [SerializeField] private int Lives;
+    [SerializeField] private Transform RespawnPoint;
+    // add death timer
+    private bool PlayerDead;
+    public GameObject StopScript;
+
     private Animator animator;
 
     public GameObject attackParticlePrefab;
@@ -19,6 +28,8 @@ public class Player : MonoBehaviour
 
     void Start()
     {
+        CurrentHealth = MaxHealth;
+        PlayerDead = false;
         animator = gameObject.GetComponent<Animator>();
     }
 
@@ -64,5 +75,30 @@ public class Player : MonoBehaviour
             transform.position = new Vector2(transform.position.x, bottomEdge);
         else if (transform.position.y > topEdge)
             transform.position = new Vector2(transform.position.x, topEdge);
+    }
+
+    public void PlayerHurt (int Damage)
+    {
+        CurrentHealth -= Damage;
+
+        if (CurrentHealth <= 0)
+        {
+            Lives--;
+            transform.position = RespawnPoint.transform.position;
+            CurrentHealth = MaxHealth;
+        }
+
+        if (Lives <= 0)
+        {
+            gameObject.SetActive(false);
+            // Stopping FireWizard script
+            StopScript.GetComponent<FireWizard>().enabled = false;
+            StopScript.GetComponent<WaterWizard>().enabled = false;
+        }
+    }
+
+    void SetMaxHealth()
+    {
+        CurrentHealth = MaxHealth;
     }
 }

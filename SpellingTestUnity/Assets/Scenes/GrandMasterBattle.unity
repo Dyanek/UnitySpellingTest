@@ -202,10 +202,10 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 833225713}
-  - component: {fileID: 833225712}
-  - component: {fileID: 833225711}
-  - component: {fileID: 833225710}
   - component: {fileID: 833225714}
+  - component: {fileID: 833225712}
+  - component: {fileID: 833225710}
+  - component: {fileID: 833225711}
   m_Layer: 0
   m_Name: PlayerWizard
   m_TagString: Player
@@ -409,7 +409,7 @@ GameObject:
   - component: {fileID: 1536158522}
   - component: {fileID: 1536158521}
   m_Layer: 0
-  m_Name: Lava
+  m_Name: Carpet
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -491,12 +491,12 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 1625443094}
-  - component: {fileID: 1625443093}
-  - component: {fileID: 1625443095}
-  - component: {fileID: 1625443096}
   - component: {fileID: 1625443097}
+  - component: {fileID: 1625443093}
+  - component: {fileID: 1625443096}
+  - component: {fileID: 1625443095}
   m_Layer: 0
-  m_Name: FireWizard
+  m_Name: GrandWizard
   m_TagString: EnemyWizard
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

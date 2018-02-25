@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class FirePuzzleExit : MonoBehaviour {
 
@@ -21,7 +22,7 @@ public class FirePuzzleExit : MonoBehaviour {
         if (other.name == "PlayerWizard")
         {
             Debug.Log("Win FirePuzzle");
-            Application.LoadLevel(LevelToLoad);
+            SceneManager.LoadScene(LevelToLoad);
         }
     }
 }
