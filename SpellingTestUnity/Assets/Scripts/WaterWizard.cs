@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class WaterWizard : MonoBehaviour
 {
-
     private float speed = 5f;
     private float movementTimer;
     private float movementCd = 1f;

@@ -18,7 +18,7 @@ public class Player : MonoBehaviour
     [SerializeField] private int Lives;
     [SerializeField] private Transform RespawnPoint;
     // add death timer
-    private bool PlayerDead;
+    // private bool PlayerDead; timer?
     public GameObject StopScript;
 
     private Animator animator;
@@ -29,7 +29,6 @@ public class Player : MonoBehaviour
     void Start()
     {
         CurrentHealth = MaxHealth;
-        PlayerDead = false;
         animator = gameObject.GetComponent<Animator>();
     }
 
