@@ -13,9 +13,9 @@ public class Player : MonoBehaviour
     [SerializeField] private bool enableShoot;
 
     // Player Health
-    [SerializeField] private int MaxHealth;
-    [SerializeField] private int CurrentHealth;
-    [SerializeField] private int Lives;
+    [SerializeField] public int MaxHealth;
+    [SerializeField] public int CurrentHealth;
+    [SerializeField] public int Lives;
     [SerializeField] private Transform RespawnPoint;
     // add death timer
     // private bool PlayerDead; timer?
