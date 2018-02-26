@@ -127,10 +127,11 @@ public class WaterWizard : MonoBehaviour
 
             Vector3 playerPosition = GameObject.FindGameObjectWithTag("Player").transform.position;
 
-            float yLength = Mathf.Sqrt((transform.position.y - playerPosition.y) * (transform.position.y - playerPosition.y));
-            float xLength = Mathf.Sqrt((transform.position.x - playerPosition.x) * (transform.position.x - playerPosition.x));
-
-            attackAngle = (xLength / yLength) * (180f / Mathf.PI);
+            float adjacent = Mathf.Abs(transform.position.y - playerPosition.y);
+            float opposite = Mathf.Abs(transform.position.x - playerPosition.x);
+            float hypothenuse = Mathf.Sqrt((adjacent * adjacent) + (opposite * opposite));
+          
+            attackAngle = (opposite / hypothenuse) * (180f / Mathf.PI);
 
             if (transform.position.x > playerPosition.x)
                 attackAngle = -attackAngle;
