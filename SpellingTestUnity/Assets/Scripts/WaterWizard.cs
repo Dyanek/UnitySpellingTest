@@ -57,13 +57,19 @@ public class WaterWizard : MonoBehaviour
         //Deletes every destroyed particle from the list
         attackParticlesList = attackParticlesList.Where(kvp => kvp.Key != null).ToList();
 
-        foreach (KeyValuePair<GameObject, Vector2> kvp in attackParticlesList)
-            kvp.Key.transform.Translate(kvp.Value * Time.deltaTime * 5f);
+        if (attackParticlesList.Count > 0)
+        {
+            foreach (KeyValuePair<GameObject, Vector2> kvp in attackParticlesList)
+                kvp.Key.transform.Translate(kvp.Value * Time.deltaTime * 5f);
+        }
 
         if (!isAttacking && attackTimer > 0)
         {
             if (animator.GetBool("Attack"))
                 animator.SetBool("Attack", false);
+
+            if (animator.GetBool("RayAttack"))
+                animator.SetBool("RayAttack", false);
 
             Movements();
             attackTimer -= Time.deltaTime;
@@ -84,17 +90,22 @@ public class WaterWizard : MonoBehaviour
 
                 if (uniqueAttackTimer > 0)
                     uniqueAttackTimer -= Time.deltaTime;
-                else
+                else if(uniqueAttackCount <= 2)
                 {
                     UniqueAttack();
                     uniqueAttackTimer = uniqueAttackCd;
                 }
+                else
+                {
+                    uniqueAttackCount = 0;
+                    isAttacking = false;                  
+                }
 
                 if (uniqueAttackCount == 2)
                 {
-                    uniqueAttackCount = 0;
                     attackTimer = attackCd;
-                    isAttacking = false;
+                    uniqueAttackTimer = uniqueAttackCd;
+                    uniqueAttackCount++;                 
                 }
             }
         }
@@ -116,7 +127,7 @@ public class WaterWizard : MonoBehaviour
 
     public void UniqueAttack()
     {
-        animator.SetBool("Attack", true);
+        animator.SetBool("RayAttack", true);
 
         uniqueAttackCount++;
 
@@ -129,7 +140,7 @@ public class WaterWizard : MonoBehaviour
             float adjacent = Mathf.Abs(transform.position.y - playerPosition.y);
             float opposite = Mathf.Abs(transform.position.x - playerPosition.x);
             float hypothenuse = Mathf.Sqrt((adjacent * adjacent) + (opposite * opposite));
-          
+
             attackAngle = (opposite / hypothenuse) * (180f / Mathf.PI);
 
             if (transform.position.x > playerPosition.x)
@@ -139,11 +150,11 @@ public class WaterWizard : MonoBehaviour
 
             Destroy(attackParticle, 0.75f);
         }
-        else if(uniqueAttackCount == 2)
+        else if (uniqueAttackCount == 2)
         {
             GameObject attackParticle = Instantiate(uniqueAttackParticlePrefab, new Vector2(transform.position.x, transform.position.y), new Quaternion());
 
-            attackParticle.transform.Rotate(new Vector3(0,0, attackAngle));
+            attackParticle.transform.Rotate(new Vector3(0, 0, attackAngle));
 
             Destroy(attackParticle, 0.75f);
         }
