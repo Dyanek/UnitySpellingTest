@@ -90,7 +90,7 @@ public class Player : MonoBehaviour
         if (Lives <= 0)
         {
             gameObject.SetActive(false);
-            // Stopping FireWizard script
+            // Stopping enemy wizard script
             StopScript.GetComponent<FireWizard>().enabled = false;
             StopScript.GetComponent<WaterWizard>().enabled = false;
         }

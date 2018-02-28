@@ -25,7 +25,7 @@ GameObject:
   - component: {fileID: 50295712644641238}
   m_Layer: 0
   m_Name: AttackParticle
-  m_TagString: Undefined
+  m_TagString: AttackParticle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

@@ -6,6 +6,8 @@ TagManager:
   tags:
   - AttackParticle
   - EnemyWizard
+  - EnemyAttackParticle
+  - EnemyRay
   layers:
   - Default
   - TransparentFX
