@@ -39,7 +39,8 @@
         <task id="40" name="FireBattle" color="#8cb6ce" meeting="false" start="2018-01-24" duration="21" complete="0" expand="true"/>
         <task id="46" name="Menu" meeting="false" start="2018-02-14" duration="6" complete="0" expand="true"/>
         <task id="41" name="FireMaze" color="#8cb6ce" meeting="false" start="2018-02-14" duration="6" complete="0" expand="true"/>
-        <task id="44" name="WaterBattle" color="#8cb6ce" meeting="false" start="2018-02-21" duration="1" complete="0" expand="true"/>
+        <task id="44" name="WaterBattle" color="#8cb6ce" meeting="false" start="2018-02-21" duration="11" complete="0" expand="true"/>
+        <task id="47" name="Health and Damage" meeting="false" start="2018-02-23" duration="2" complete="0" expand="true"/>
     </tasks>
     <resources/>
     <allocations/>
