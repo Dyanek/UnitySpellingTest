@@ -20,10 +20,10 @@ MonoBehaviour:
     y: 30
     width: 1920
     height: 987
-  m_MinSize: {x: 679, y: 471}
-  m_MaxSize: {x: 14000, y: 14021}
+  m_MinSize: {x: 681, y: 492}
+  m_MaxSize: {x: 14004, y: 14042}
   vertical: 0
-  controlID: 7748
+  controlID: 5652
 --- !u!114 &2
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -121,10 +121,10 @@ MonoBehaviour:
     y: 0
     width: 1430
     height: 987
-  m_MinSize: {x: 404, y: 471}
-  m_MaxSize: {x: 10000, y: 14021}
+  m_MinSize: {x: 404, y: 492}
+  m_MaxSize: {x: 10002, y: 14042}
   vertical: 1
-  controlID: 7749
+  controlID: 5653
 --- !u!114 &4
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -148,7 +148,7 @@ MonoBehaviour:
   m_MinSize: {x: 404, y: 221}
   m_MaxSize: {x: 8004, y: 4021}
   vertical: 0
-  controlID: 7750
+  controlID: 5654
 --- !u!114 &5
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -167,8 +167,8 @@ MonoBehaviour:
     y: 0
     width: 359
     height: 638
-  m_MinSize: {x: 200, y: 200}
-  m_MaxSize: {x: 4000, y: 4000}
+  m_MinSize: {x: 202, y: 221}
+  m_MaxSize: {x: 4002, y: 4021}
   m_ActualView: {fileID: 6}
   m_Panes:
   - {fileID: 6}
@@ -203,9 +203,9 @@ MonoBehaviour:
   m_PersistentViewDataDictionary: {fileID: 0}
   m_TreeViewState:
     scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: 847effff
-    m_LastClickedID: 0
-    m_ExpandedIDs: e646feff044ffeff7c56feffb89cfeff56a8feffc2f7ffff00000000
+    m_SelectedIDs: 582d0000
+    m_LastClickedID: 11608
+    m_ExpandedIDs: 9efbffff00000000582d0000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -442,10 +442,10 @@ MonoBehaviour:
       e32: 0
       e33: 1
   m_PreviewAnimator: {fileID: 0}
-  m_AnimatorController: {fileID: 9100000, guid: e6606925433476142993bf4bc2b8907a,
+  m_AnimatorController: {fileID: 9100000, guid: d3d12869873dfa248a0ce1a0a9c02832,
     type: 2}
   m_BreadCrumbs:
-  - m_Target: {fileID: 1107384509530586402, guid: e6606925433476142993bf4bc2b8907a,
+  - m_Target: {fileID: 1107914573186365374, guid: d3d12869873dfa248a0ce1a0a9c02832,
       type: 2}
     m_ScrollPosition: {x: 0, y: 0}
   stateMachineGraph: {fileID: 0}
@@ -476,8 +476,8 @@ MonoBehaviour:
     y: 638
     width: 1430
     height: 349
-  m_MinSize: {x: 230, y: 250}
-  m_MaxSize: {x: 10000, y: 10000}
+  m_MinSize: {x: 232, y: 271}
+  m_MaxSize: {x: 10002, y: 10021}
   m_ActualView: {fileID: 13}
   m_Panes:
   - {fileID: 12}
@@ -507,9 +507,9 @@ MonoBehaviour:
   m_Pos:
     serializedVersion: 2
     x: 0
-    y: 486
-    width: 1084
-    height: 220
+    y: 730
+    width: 1428
+    height: 328
   m_PersistentViewDataDictionary: {fileID: 0}
 --- !u!114 &13
 MonoBehaviour:
@@ -559,10 +559,10 @@ MonoBehaviour:
   m_LastProjectPath: D:\GitHub\SpellingTestUnity\SpellingTestUnity
   m_IsLocked: 0
   m_FolderTreeState:
-    scrollPos: {x: 0, y: 153}
-    m_SelectedIDs: 1c2f0000
-    m_LastClickedID: 12060
-    m_ExpandedIDs: 000000009a2d0000ae2d0000302e00001c2f0000223000008a300000c0300000f63000009c31000000ca9a3bffffff7f
+    scrollPos: {x: 0, y: 95}
+    m_SelectedIDs: a62a0000
+    m_LastClickedID: 10918
+    m_ExpandedIDs: 00000000582800006c28000042290000a62a0000c22b0000322c00006e2c0000a82c0000542e000000ca9a3bffffff7f
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -590,7 +590,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 000000009a2d0000ae2d0000302e00001c2f0000223000008a300000c0300000f63000009c31000000ca9a3bffffff7f
+    m_ExpandedIDs: 00000000582800006c28000042290000a62a0000c22b0000322c00006e2c0000a82c0000542e000000ca9a3bffffff7f
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -615,8 +615,8 @@ MonoBehaviour:
       m_Icon: {fileID: 0}
       m_ResourceFile: 
   m_ListAreaState:
-    m_SelectedInstanceIDs: 847effff
-    m_LastClickedInstanceID: -33148
+    m_SelectedInstanceIDs: 582d0000
+    m_LastClickedInstanceID: 11608
     m_HadKeyboardFocusLastEvent: 0
     m_ExpandedInstanceIDs: c6230000aa2b00007a290000
     m_RenameOverlay:
@@ -663,8 +663,8 @@ MonoBehaviour:
     y: 0
     width: 490
     height: 987
-  m_MinSize: {x: 275, y: 50}
-  m_MaxSize: {x: 4000, y: 4000}
+  m_MinSize: {x: 277, y: 71}
+  m_MaxSize: {x: 4002, y: 4021}
   m_ActualView: {fileID: 15}
   m_Panes:
   - {fileID: 15}

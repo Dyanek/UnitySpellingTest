@@ -8,6 +8,7 @@ TagManager:
   - EnemyWizard
   - EnemyAttackParticle
   - EnemyRay
+  - EnemyLightning
   layers:
   - Default
   - TransparentFX

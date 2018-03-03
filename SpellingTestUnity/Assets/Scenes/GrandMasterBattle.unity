@@ -814,6 +814,7 @@ GameObject:
   - component: {fileID: 1625443095}
   - component: {fileID: 1625443097}
   - component: {fileID: 1625443093}
+  - component: {fileID: 1625443096}
   m_Layer: 0
   m_Name: GrandWizard
   m_TagString: EnemyWizard
@@ -893,12 +894,27 @@ MonoBehaviour:
   rightEdge: 5.9
   bottomEdge: 4
   topEdge: 4.75
-  attackParticlePrefab: {fileID: 1615032018839910, guid: 3112217e37f41184cac99d0bda2b1b5d,
+  attackParticlePrefab: {fileID: 1904101360272046, guid: 84fb1ef9ebe431346ad9d943b673de63,
     type: 2}
   uniqueWaterAttackMarkPrefab: {fileID: 1294791432546298, guid: d54eca0bc1e2ce449b70472b2131b6d5,
     type: 2}
   uniqueWaterAttackParticlePrefab: {fileID: 1802522251311958, guid: ac377ec273f643b4a9e2bf2c8e562f0e,
     type: 2}
+  uniqueGrandAttackMarkPrefab: {fileID: 1787895637634614, guid: e56b863c17b20064fb5fec17af79a1bf,
+    type: 2}
+  uniqueGrandAttackParticlePrefab: {fileID: 1094702705145228, guid: 229ab91dfc1f2c846be99fbe99004cf7,
+    type: 2}
+--- !u!114 &1625443096
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1625443092}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 90c75fea9251e24459c703cb82d8b335, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!61 &1625443097
 BoxCollider2D:
   m_ObjectHideFlags: 0

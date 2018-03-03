@@ -25,22 +25,31 @@ public class GrandWizard : MonoBehaviour
     public GameObject uniqueWaterAttackMarkPrefab;
     public GameObject uniqueWaterAttackParticlePrefab;
 
+    //Unique grand wizard attack
+    public GameObject uniqueGrandAttackMarkPrefab;
+    public GameObject uniqueGrandAttackParticlePrefab;
+
     private bool isAttacking = false;
     private float attackTimer;
     private float attackCd = 1f;
-    private float basicAttacksCount = 0;
-   
+    private int basicAttacksCount = 0;
+
     private const string FIRE_ATTACK = "fire";
     private const string WATER_ATTACK = "water";
     private string uniqueAttackTurn = FIRE_ATTACK;
 
     private float uniqueFireAttackTimer;
     private float uniqueFireAttackCd = 0.3f;
-    private float uniqueFireAttackCount = 0;
+    private int uniqueFireAttackCount = 0;
 
     private float uniqueWaterAttackTimer;
     private float uniqueWaterAttackCd = 0.75f;
-    private float uniqueWaterAttackCount = 0;
+    private int uniqueWaterAttackCount = 0;
+
+    private float uniqueGrandAttackTimer;
+    private float uniqueGrandAttackCd = 0.75f;
+    private int uniqueGrandAttackCount = 0;
+    private Vector2 uniqueAttackMarkPrint;
 
     private List<KeyValuePair<GameObject, Vector2>> attackParticlesList;
     private float attackAngle;
@@ -109,7 +118,7 @@ public class GrandWizard : MonoBehaviour
                         attackTimer = attackCd;
                         isAttacking = false;
                         uniqueAttackTurn = WATER_ATTACK;
-                    }                   
+                    }
                 }
                 else
                 {
@@ -136,6 +145,12 @@ public class GrandWizard : MonoBehaviour
                 }
             }
         }
+
+        //Grand master attack
+        if (uniqueGrandAttackTimer > 0)
+            uniqueGrandAttackTimer -= Time.deltaTime;
+        else
+            UniqueGrandAttack();
     }
 
     public void BasicAttack()
@@ -150,6 +165,27 @@ public class GrandWizard : MonoBehaviour
         particleVector.y /= 3;
 
         attackParticlesList.Add(CreateAttackParticle(2f, particleVector));
+    }
+
+    public void UniqueGrandAttack()
+    {
+        if (uniqueGrandAttackCount == 0)
+        {
+            uniqueAttackMarkPrint = new Vector2(Random.Range(-5.9f, 5.9f), Random.Range(-0.75f, 0.3f));
+            GameObject attackMark = Instantiate(uniqueGrandAttackMarkPrefab, uniqueAttackMarkPrint, new Quaternion());
+            Destroy(attackMark, 0.75f);
+
+            uniqueGrandAttackTimer = uniqueGrandAttackCd;
+            uniqueGrandAttackCount++;
+        }
+        else
+        {
+            GameObject attackParticle = Instantiate(uniqueGrandAttackParticlePrefab, uniqueAttackMarkPrint, new Quaternion());
+            Destroy(attackParticle, 2f);
+
+            uniqueGrandAttackTimer = 0;
+            uniqueGrandAttackCount = 0;
+        }
     }
 
     public void UniqueFireAttack()

@@ -29,10 +29,11 @@ public class WaterWizard : MonoBehaviour
     private bool isAttacking = false;
     private float attackTimer;
     private float attackCd = 1f;
-    private float basicAttacksCount = 0;
+    private int basicAttacksCount = 0;
+
     private float uniqueAttackTimer;
     private float uniqueAttackCd = 0.75f;
-    private float uniqueAttackCount = 0;
+    private int uniqueAttackCount = 0;
 
     private List<KeyValuePair<GameObject, Vector2>> attackParticlesList;
     private float attackAngle;
