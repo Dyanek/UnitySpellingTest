@@ -18,7 +18,6 @@ public class FireWizard : MonoBehaviour
     private Vector2 movementVector;
 
     public GameObject attackParticlePrefab;
-    public Transform attackParticleSpawn;
 
     private bool isAttacking = false;
     private float attackTimer;

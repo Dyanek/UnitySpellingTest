@@ -1031,11 +1031,11 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 1625443094}
+  - component: {fileID: 1625443095}
+  - component: {fileID: 1625443098}
   - component: {fileID: 1625443097}
   - component: {fileID: 1625443093}
   - component: {fileID: 1625443096}
-  - component: {fileID: 1625443095}
-  - component: {fileID: 1625443098}
   m_Layer: 0
   m_Name: FireWizard
   m_TagString: EnemyWizard

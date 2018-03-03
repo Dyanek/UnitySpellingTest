@@ -19,15 +19,12 @@ public class WaterWizard : MonoBehaviour
 
     //Basic attack particles
     public GameObject attackParticlePrefab;
-    public Transform attackParticleSpawn;
 
     //Unique attack mark (before the real attack is launched)
     public GameObject uniqueAttackMarkPrefab;
-    public Transform uniqueAttackMarkSpawn;
 
     //Unique attack particle
     public GameObject uniqueAttackParticlePrefab;
-    public Transform uniqueAttackParticleSpawn;
 
     private bool isAttacking = false;
     private float attackTimer;
@@ -117,7 +114,7 @@ public class WaterWizard : MonoBehaviour
 
         basicAttacksCount++;
 
-        //The basic attack particle direction is defined by [player's position - firewizard position]. The particle's speed is defined in the Update function
+        //The basic attack particle direction is defined by [player's position - enemy wizard position]. The particle's speed is defined in the Update function
         Vector2 particleVector = GameObject.FindGameObjectWithTag("Player").transform.position - transform.position;
         particleVector.x /= 3;
         particleVector.y /= 3;
@@ -133,7 +130,7 @@ public class WaterWizard : MonoBehaviour
 
         if (uniqueAttackCount == 1)
         {
-            GameObject attackParticle = Instantiate(uniqueAttackMarkPrefab, new Vector2(transform.position.x, transform.position.y), new Quaternion());
+            GameObject attackParticle = Instantiate(uniqueAttackMarkPrefab, new Vector2(transform.position.x, transform.position.y - 0.15f), new Quaternion());
 
             Vector3 playerPosition = GameObject.FindGameObjectWithTag("Player").transform.position;
 
@@ -152,7 +149,7 @@ public class WaterWizard : MonoBehaviour
         }
         else if (uniqueAttackCount == 2)
         {
-            GameObject attackParticle = Instantiate(uniqueAttackParticlePrefab, new Vector2(transform.position.x, transform.position.y), new Quaternion());
+            GameObject attackParticle = Instantiate(uniqueAttackParticlePrefab, new Vector2(transform.position.x, transform.position.y - 0.15f), new Quaternion());
 
             attackParticle.transform.Rotate(new Vector3(0, 0, attackAngle));
 
