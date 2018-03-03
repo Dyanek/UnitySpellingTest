@@ -14,7 +14,7 @@ public class GrandWizard : MonoBehaviour
     [SerializeField] private float bottomEdge;
     [SerializeField] private float topEdge;
 
-    //private Animator animator;
+    private Animator animator;
 
     private Vector2 movementVector;
 
@@ -63,7 +63,7 @@ public class GrandWizard : MonoBehaviour
 
         attackParticlesList = new List<KeyValuePair<GameObject, Vector2>>();
 
-        //animator = gameObject.GetComponent<Animator>();
+        animator = gameObject.GetComponent<Animator>();
     }
 
     void Update()
@@ -79,11 +79,11 @@ public class GrandWizard : MonoBehaviour
 
         if (!isAttacking && attackTimer > 0)
         {
-            //if (animator.GetBool("Attack"))
-            //    animator.SetBool("Attack", false);
+            if (animator.GetBool("Attack"))
+                animator.SetBool("Attack", false);
 
-            //if (animator.GetBool("RayAttack"))
-            //    animator.SetBool("RayAttack", false);
+            if (animator.GetBool("RayAttack"))
+                animator.SetBool("RayAttack", false);
 
             Movements();
             attackTimer -= Time.deltaTime;
@@ -155,7 +155,7 @@ public class GrandWizard : MonoBehaviour
 
     public void BasicAttack()
     {
-        //animator.SetBool("Attack", true);
+        animator.SetBool("Attack", true);
 
         basicAttacksCount++;
 
@@ -190,7 +190,7 @@ public class GrandWizard : MonoBehaviour
 
     public void UniqueFireAttack()
     {
-        //animator.SetBool("Attack", true);
+        animator.SetBool("Attack", true);
 
         uniqueFireAttackCount++;
 
@@ -204,7 +204,7 @@ public class GrandWizard : MonoBehaviour
 
     public void UniqueWaterAttack()
     {
-        //animator.SetBool("RayAttack", true);
+        animator.SetBool("RayAttack", true);
 
         uniqueWaterAttackCount++;
 
@@ -249,8 +249,8 @@ public class GrandWizard : MonoBehaviour
     {
         if (movementTimer > 0)
         {
-            //animator.SetFloat("HorizontalSpeed", movementVector.x);
-            //animator.SetFloat("VerticalSpeed", movementVector.y);
+            animator.SetFloat("HorizontalSpeed", movementVector.x);
+            animator.SetFloat("VerticalSpeed", movementVector.y);
 
             movementTimer -= Time.deltaTime;
             transform.Translate(movementVector * Time.deltaTime * speed);
