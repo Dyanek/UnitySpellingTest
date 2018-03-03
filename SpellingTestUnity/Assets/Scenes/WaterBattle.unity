@@ -499,13 +499,10 @@ MonoBehaviour:
   topEdge: 4.75
   attackParticlePrefab: {fileID: 1744206480939580, guid: f80f30437df59d14a8f1c580a3133649,
     type: 2}
-  attackParticleSpawn: {fileID: 0}
   uniqueAttackMarkPrefab: {fileID: 1294791432546298, guid: d54eca0bc1e2ce449b70472b2131b6d5,
     type: 2}
-  uniqueAttackMarkSpawn: {fileID: 0}
   uniqueAttackParticlePrefab: {fileID: 1802522251311958, guid: ac377ec273f643b4a9e2bf2c8e562f0e,
     type: 2}
-  uniqueAttackParticleSpawn: {fileID: 0}
 --- !u!95 &492397474
 Animator:
   serializedVersion: 3
@@ -820,7 +817,7 @@ MonoBehaviour:
   topEdge: 0.3
   enableMovements: 1
   enableShoot: 1
-  MaxHealth: 100
+  MaxHealth: 150
   CurrentHealth: 0
   Lives: 3
   RespawnPoint: {fileID: 802875214}

@@ -10,7 +10,7 @@ public class OnAttackParticleCollision : MonoBehaviour
         if (collision.gameObject.tag != "AttackParticle" && collision.gameObject.tag != "Player")
         {
             if (collision.gameObject.tag == "EnemyWizard")
-                collision.gameObject.GetComponent<EnemyHealth>().EnemyHurt(20); // Take off health
+                collision.gameObject.GetComponent<EnemyHealth>().EnemyHurt(5); // Take off health
 
                 Destroy(gameObject);
         }

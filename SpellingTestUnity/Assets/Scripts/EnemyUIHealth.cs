@@ -21,6 +21,6 @@ public class EnemyUIHealth : MonoBehaviour
     {
         HealthBar.maxValue = EnemyHealth.MaxHealth;
         HealthBar.value = EnemyHealth.CurrentHealth;
-        HealthText.text = EnemyHealth.CurrentHealth + " / 100";
+        HealthText.text = EnemyHealth.CurrentHealth + " / " + EnemyHealth.MaxHealth;
     }
 }
