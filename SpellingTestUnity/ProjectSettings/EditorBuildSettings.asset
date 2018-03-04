@@ -20,3 +20,33 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/WaterBattle.unity
     guid: 866c3830b9414994096baa150651f212
+  - enabled: 1
+    path: Assets/Scenes/FireBattleBefore.unity
+    guid: b707919a0ff758243b0870807181c965
+  - enabled: 1
+    path: Assets/Scenes/GrandMasterBattleBefore.unity
+    guid: 4c6bf968b76f05f4e8d091f0d6bf03fe
+  - enabled: 1
+    path: Assets/Scenes/WaterBattleBefore.unity
+    guid: abdcb5f4c4fae274b862974e71ef9cd1
+  - enabled: 1
+    path: Assets/Scenes/GrandMasterBattle.unity
+    guid: e031d5baa9077f1469276509c19dd98f
+  - enabled: 1
+    path: Assets/Scenes/TutorialBefore.unity
+    guid: cc8d28f6ea2905747b3f8cc84d5bc179
+  - enabled: 1
+    path: Assets/Scenes/TutorialForest.unity
+    guid: 43be11823f26cfe45bec3869d8e33ff7
+  - enabled: 1
+    path: Assets/Scenes/FirePuzzleBefore.unity
+    guid: 8af1ff9ad87f7e74685c25cfbd26c545
+  - enabled: 1
+    path: Assets/Scenes/WaterPuzzleBefore.unity
+    guid: 6d0f7492e4924ba478c80e1bb7470b25
+  - enabled: 1
+    path: Assets/Scenes/GrandBefore.unity
+    guid: e50e317b3db520c45b48bf1ac0c2193c
+  - enabled: 1
+    path: Assets/Scenes/GrandMasterBattleComplete.unity
+    guid: f9fc0f6cfb6a4ee468a6903ca25dcfc0

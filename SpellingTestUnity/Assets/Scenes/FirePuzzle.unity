@@ -240,7 +240,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 78792606c37c830449e3a3ad6aad8ff2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  LevelToLoad: FireBattle
+  LevelToLoad: FireBattleBefore
 --- !u!61 &266991707
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -441,6 +441,11 @@ MonoBehaviour:
   topEdge: 100
   enableMovements: 1
   enableShoot: 0
+  MaxHealth: 0
+  CurrentHealth: 0
+  Lives: 0
+  RespawnPoint: {fileID: 0}
+  StopScript: {fileID: 0}
   attackParticlePrefab: {fileID: 1349947998817766, guid: f9b1b0ac6d9120b428beb8487e1187fe,
     type: 2}
   attackParticleSpawn: {fileID: 0}

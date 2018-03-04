@@ -533,6 +533,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   MaxHealth: 100
   CurrentHealth: 0
+  scene: GrandBefore
 --- !u!61 &492397476
 BoxCollider2D:
   m_ObjectHideFlags: 0

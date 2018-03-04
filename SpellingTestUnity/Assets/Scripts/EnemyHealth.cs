@@ -1,11 +1,14 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class EnemyHealth : MonoBehaviour {
 
     public int MaxHealth;
     public int CurrentHealth;
+
+    public string scene;
 
     // Use this for initialization
     void Start()
@@ -20,6 +23,7 @@ public class EnemyHealth : MonoBehaviour {
         {
             // gameObject.SetActive(false);
             Destroy(gameObject);
+            ChangeScene();
         }
     }
 
@@ -31,5 +35,10 @@ public class EnemyHealth : MonoBehaviour {
     public void SetMaxHealth()
     {
         CurrentHealth = MaxHealth;
+    }
+
+    public void ChangeScene()
+    {
+        SceneManager.LoadScene(scene);
     }
 }

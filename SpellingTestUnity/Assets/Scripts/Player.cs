@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Player : MonoBehaviour
 {
@@ -91,6 +92,10 @@ public class Player : MonoBehaviour
             // Stopping enemy wizard script
             StopScript.GetComponent<FireWizard>().enabled = false;
             StopScript.GetComponent<WaterWizard>().enabled = false;
+            StopScript.GetComponent<GrandWizard>().enabled = false;
+
+            // Reload current scene
+            // SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
         }
     }
 

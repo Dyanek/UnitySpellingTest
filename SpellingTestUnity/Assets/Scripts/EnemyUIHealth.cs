@@ -5,7 +5,6 @@ using UnityEngine.UI;
 
 public class EnemyUIHealth : MonoBehaviour
 {
-
     public Slider HealthBar;
     public Text HealthText;
     public EnemyHealth EnemyHealth;

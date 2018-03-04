@@ -1301,6 +1301,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   MaxHealth: 200
   CurrentHealth: 0
+  scene: GrandMasterBattleComplete
 --- !u!1 &1706037360
 GameObject:
   m_ObjectHideFlags: 0
