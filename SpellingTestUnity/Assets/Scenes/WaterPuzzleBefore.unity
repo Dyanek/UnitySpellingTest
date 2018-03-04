@@ -378,7 +378,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 97ce8e2cdf5f2164eac28c615c96952b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  scene: WaterBattleBefore
+  scene: WaterPuzzle
 --- !u!4 &875109278
 Transform:
   m_ObjectHideFlags: 0

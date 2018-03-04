@@ -20,10 +20,10 @@ MonoBehaviour:
     y: 30
     width: 1366
     height: 635
-  m_MinSize: {x: 681, y: 471}
-  m_MaxSize: {x: 14000, y: 14021}
+  m_MinSize: {x: 683, y: 471}
+  m_MaxSize: {x: 14002, y: 14021}
   vertical: 0
-  controlID: 5170
+  controlID: 843
 --- !u!114 &2
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -124,7 +124,7 @@ MonoBehaviour:
   m_MinSize: {x: 406, y: 471}
   m_MaxSize: {x: 10000, y: 14021}
   vertical: 1
-  controlID: 5171
+  controlID: 844
 --- !u!114 &4
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -148,7 +148,7 @@ MonoBehaviour:
   m_MinSize: {x: 406, y: 221}
   m_MaxSize: {x: 8006, y: 4021}
   vertical: 0
-  controlID: 5172
+  controlID: 845
 --- !u!114 &5
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -203,9 +203,9 @@ MonoBehaviour:
   m_PersistentViewDataDictionary: {fileID: 0}
   m_TreeViewState:
     scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: 20580000
+    m_SelectedIDs: ea280000
     m_LastClickedID: 0
-    m_ExpandedIDs: a888feff36a4fefff6aafeff3cbefeff922dffff723bffffe83fffff1848ffff8a4cffff5853ffff2a54ffffd255ffffd655ffffda55ffffde55ffffe255ffffea55ffffee55fffff255fffff655fffffc55ffff0a56ffff1056ffff1856ffff3256ffff9e65fffffc66ffff6068ffff0e7affffb87bffffca7cfffff07dffff3e7fffff5880ffff7481fffffc92fffff898ffffaca0ffffeac6ffff7ecdfffffcceffff82d5ffff3ce7ffff48f3ffff94fbffff0000000098560000
+    m_ExpandedIDs: 8ebbffff8cbfffff6ec0ffff1ac2ffff24c2ffff2cc2ffff34c2ffff3cc2ffff44c2ffff4cc2ffff58c2ffff60c2ffff68c2ffff78c2ffff82c2ffff9cc2ffffa6c2ffffb0c2ffffcec2fffffec6ffffb4d7ffff22f8ffff94fbffff00000000f02e0000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -224,7 +224,7 @@ MonoBehaviour:
       m_ClientGUIView: {fileID: 5}
     m_SearchString: 
   m_ExpandedScenes:
-  - TutorialBefore
+  - GrandMasterBattleComplete
   m_CurrenRootInstanceID: 0
   m_Locked: 0
   m_CurrentSortingName: TransformSorting
@@ -459,12 +459,8 @@ MonoBehaviour:
       e32: 0
       e33: 1
   m_PreviewAnimator: {fileID: 0}
-  m_AnimatorController: {fileID: 9100000, guid: e6606925433476142993bf4bc2b8907a,
-    type: 2}
-  m_BreadCrumbs:
-  - m_Target: {fileID: 1107384509530586402, guid: e6606925433476142993bf4bc2b8907a,
-      type: 2}
-    m_ScrollPosition: {x: 0, y: 0}
+  m_AnimatorController: {fileID: 0}
+  m_BreadCrumbs: []
   stateMachineGraph: {fileID: 0}
   stateMachineGraphGUI: {fileID: 0}
   blendTreeGraph: {fileID: 0}
@@ -493,8 +489,8 @@ MonoBehaviour:
     y: 364
     width: 1017
     height: 271
-  m_MinSize: {x: 230, y: 250}
-  m_MaxSize: {x: 10000, y: 10000}
+  m_MinSize: {x: 232, y: 271}
+  m_MaxSize: {x: 10002, y: 10021}
   m_ActualView: {fileID: 12}
   m_Panes:
   - {fileID: 12}
@@ -540,19 +536,19 @@ MonoBehaviour:
     m_ShowAllHits: 0
     m_SearchArea: 0
     m_Folders:
-    - Assets/Scripts
+    - Assets/Scenes
   m_ViewMode: 1
   m_StartGridSize: 64
   m_LastFolders:
-  - Assets/Scripts
+  - Assets/Scenes
   m_LastFoldersGridSize: -1
   m_LastProjectPath: C:\Account_YoshiPrograms\Github Desktop\SpellingTestUnity\SpellingTestUnity
   m_IsLocked: 0
   m_FolderTreeState:
-    scrollPos: {x: 0, y: 143}
-    m_SelectedIDs: aa2a0000
-    m_LastClickedID: 10922
-    m_ExpandedIDs: 000000005e280000722800008828000052290000002a0000aa2a0000c22a0000f02b00005e2c0000d42c0000782e0000ffffff7f
+    scrollPos: {x: 0, y: 83}
+    m_SelectedIDs: 0a2a0000
+    m_LastClickedID: 10762
+    m_ExpandedIDs: 0000000060280000742800008a2800005c2900000a2a0000b82a0000ce2a00000a2c0000802c0000f62c00009c2e0000ffffff7f
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -580,7 +576,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 000000005e280000722800008828000052290000002a0000aa2a0000c22a0000f02b00005e2c0000d42c0000782e0000ffffff7f
+    m_ExpandedIDs: 0000000060280000742800008a2800005c2900000a2a0000b82a0000ce2a00000a2c0000802c0000f62c00009c2e0000ffffff7f
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -605,8 +601,8 @@ MonoBehaviour:
       m_Icon: {fileID: 0}
       m_ResourceFile: 
   m_ListAreaState:
-    m_SelectedInstanceIDs: 20580000
-    m_LastClickedInstanceID: 22560
+    m_SelectedInstanceIDs: ea280000
+    m_LastClickedInstanceID: 10474
     m_HadKeyboardFocusLastEvent: 1
     m_ExpandedInstanceIDs: c62300007a290000
     m_RenameOverlay:
@@ -680,8 +676,8 @@ MonoBehaviour:
     y: 0
     width: 349
     height: 635
-  m_MinSize: {x: 275, y: 50}
-  m_MaxSize: {x: 4000, y: 4000}
+  m_MinSize: {x: 277, y: 71}
+  m_MaxSize: {x: 4002, y: 4021}
   m_ActualView: {fileID: 15}
   m_Panes:
   - {fileID: 15}

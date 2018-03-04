@@ -15,6 +15,7 @@ Assets/Scenes/FirePuzzleBefore.unity
 Assets/Scenes/WaterPuzzleBefore.unity
 Assets/Scenes/GrandBefore.unity
 Assets/Scenes/GrandMasterBattleComplete.unity
+Assets/Scenes/WaterPuzzle.unity
 SceneListEnd?
 75cd0c6c744b9733ef29aa6c59ece2b1 Assembly-CSharp.dll:TMPro.Examples.VertexZoom
 c906602d9b43cc5e075f80e1d8ae7c79 Assembly-CSharp.dll:TMPro.Examples.Benchmark01_UGUI
@@ -248,6 +249,6 @@ afc52d27c3ec0bd47909e81bd45fbffa Assembly-CSharp.dll:TMPro.TMP_TextEventHandler
 af7666733efcc974926d7d470e1732a6 Assembly-CSharp.dll:TMPro.Examples.SkewTextExample
 04052bc946f4107524b720802f3f3f7b Assembly-CSharp.dll:.Player
 05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:.OnEnemyRayAttackCollision
+05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:.Quit
 34e025057ef78b1bf238460cdf6583a3 Assembly-CSharp.dll:TMPro.Examples.ObjectSpin
 05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:TMPro.Examples.SimpleScript
-05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:.Quit

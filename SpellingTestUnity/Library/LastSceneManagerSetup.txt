@@ -1,4 +1,4 @@
 sceneSetups:
-- path: Assets/Scenes/GrandMasterBattleComplete.unity
+- path: Assets/Scenes/WaterPuzzleBefore.unity
   isLoaded: 1
   isActive: 1

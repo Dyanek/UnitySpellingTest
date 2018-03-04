@@ -50,3 +50,6 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/GrandMasterBattleComplete.unity
     guid: f9fc0f6cfb6a4ee468a6903ca25dcfc0
+  - enabled: 1
+    path: Assets/Scenes/WaterPuzzle.unity
+    guid: 0c9277384c60b1840b1a114fcf284cf2
