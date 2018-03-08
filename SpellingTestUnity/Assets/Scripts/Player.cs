@@ -25,6 +25,8 @@ public class Player : MonoBehaviour
     public GameObject attackParticlePrefab;
     public Transform attackParticleSpawn;
 
+    public string Dead;
+
     void Start()
     {
         CurrentHealth = MaxHealth;
@@ -88,14 +90,14 @@ public class Player : MonoBehaviour
 
         if (Lives <= 0)
         {
-            gameObject.SetActive(false);
+            // gameObject.SetActive(false);
             // Stopping enemy wizard script
-            StopScript.GetComponent<FireWizard>().enabled = false;
-            StopScript.GetComponent<WaterWizard>().enabled = false;
-            StopScript.GetComponent<GrandWizard>().enabled = false;
+            //StopScript.GetComponent<FireWizard>().enabled = false;
+            //StopScript.GetComponent<WaterWizard>().enabled = false;
+            //StopScript.GetComponent<GrandWizard>().enabled = false;
 
-            // Reload current scene
-            // SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+            // Load Death Scene
+            SceneManager.LoadScene(Dead);
         }
     }
 

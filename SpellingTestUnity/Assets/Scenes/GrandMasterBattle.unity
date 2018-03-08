@@ -569,6 +569,7 @@ MonoBehaviour:
   attackParticlePrefab: {fileID: 1349947998817766, guid: f9b1b0ac6d9120b428beb8487e1187fe,
     type: 2}
   attackParticleSpawn: {fileID: 0}
+  Dead: Death
 --- !u!212 &833225712
 SpriteRenderer:
   m_ObjectHideFlags: 0
