@@ -17,6 +17,9 @@ Assets/Scenes/GrandBefore.unity
 Assets/Scenes/GrandMasterBattleComplete.unity
 Assets/Scenes/WaterPuzzle.unity
 Assets/Scenes/Death.unity
+Assets/Scenes/Tutorial01.unity
+Assets/Scenes/Tutorial02.unity
+Assets/Scenes/Tutorial03.unity
 SceneListEnd?
 75cd0c6c744b9733ef29aa6c59ece2b1 Assembly-CSharp.dll:TMPro.Examples.VertexZoom
 c906602d9b43cc5e075f80e1d8ae7c79 Assembly-CSharp.dll:TMPro.Examples.Benchmark01_UGUI
@@ -157,7 +160,7 @@ bc68edb0af574bf79f9550ead8ebae5c UnityEngine.HoloLens.dll:UnityEngine.Audio.Audi
 463516d5b5fe8e67a0a24c48f2095b04 UnityEngine.HoloLens.dll:UnityEngine.EventSystems.HoloLensInputModule
 c2275a8bfbb9f9942cad75ecdfded41d UnityEngine.HoloLens.dll:UnityEngine.XR.WSA.SpatialMappingCollider
 45f3431f0103c41611e8d4eec3d439df UnityEngine.HoloLens.dll:UnityEngine.XR.WSA.SpatialMappingRenderer
-05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:.MainMenu
+1039b0b7d14f466c0cd182e29ab3ac08 Assembly-CSharp.dll:.MainMenu
 50a0fa002cfc67638c87a901e46b763e Assembly-CSharp.dll:TMPro.Examples.TMP_TextSelector_B
 020550babdb991365f61c5bffe1f4f52 Assembly-CSharp.dll:TMPro.Examples.Benchmark03
 5f0f7babb821858ce109816057a8a36d Assembly-CSharp.dll:.FirePuzzleExit
@@ -248,7 +251,7 @@ afc52d27c3ec0bd47909e81bd45fbffa Assembly-CSharp.dll:TMPro.TMP_TextEventHandler
 05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:TMPro.Examples.VertexColorCycler
 020550babdb991365f61c5bffe1f4f52 Assembly-CSharp.dll:TMPro.Examples.TextMeshSpawner
 af7666733efcc974926d7d470e1732a6 Assembly-CSharp.dll:TMPro.Examples.SkewTextExample
-3d7fd475d39ae19fd94d42907a33e19b Assembly-CSharp.dll:.Player
+6f61ffd966738a78f001edc60b35c2bc Assembly-CSharp.dll:.Player
 05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:.OnEnemyRayAttackCollision
 b6f26e949150468ca1398bf9d85c9ad3 Assembly-CSharp.dll:.WaterPuzzle
 05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:.Quit
