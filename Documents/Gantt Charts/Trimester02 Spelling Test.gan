@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?><project name="Gantt SpellingTest" company="" webLink="http://" view-date="2018-02-05" view-index="0" gantt-divider-location="414" resource-divider-location="300" version="2.8.5" locale="en_GB">
+<?xml version="1.0" encoding="UTF-8"?><project name="Gantt SpellingTest" company="" webLink="http://" view-date="2018-01-22" view-index="0" gantt-divider-location="414" resource-divider-location="300" version="2.8.5" locale="en_GB">
     <description/>
     <view zooming-state="default:4" id="gantt-chart">
         <field id="tpd3" name="Name" width="236" order="0"/>
@@ -38,11 +38,13 @@
         <task id="39" name="Tutorial" color="#8cb6ce" meeting="false" start="2018-01-10" duration="11" complete="0" expand="true"/>
         <task id="40" name="FireBattle" color="#8cb6ce" meeting="false" start="2018-01-24" duration="21" complete="0" expand="true"/>
         <task id="46" name="Menu" meeting="false" start="2018-02-14" duration="6" complete="0" expand="true"/>
-        <task id="41" name="FireMaze" color="#8cb6ce" meeting="false" start="2018-02-14" duration="6" complete="0" expand="true"/>
+        <task id="41" name="FirePuzzle" color="#8cb6ce" meeting="false" start="2018-02-14" duration="6" complete="0" expand="true"/>
         <task id="44" name="WaterBattle" color="#8cb6ce" meeting="false" start="2018-02-21" duration="8" complete="0" expand="true"/>
         <task id="47" name="Health and Damage" meeting="false" start="2018-02-23" duration="2" complete="0" expand="true"/>
         <task id="51" name="GrandMasterBattle" color="#8cb6ce" meeting="false" start="2018-02-28" duration="3" complete="0" expand="true"/>
-        <task id="60" name="Cutscenes" color="#8cb6ce" meeting="false" start="2018-03-02" duration="3" complete="0" expand="true"/>
+        <task id="60" name="Cutscenes" color="#8cb6ce" meeting="false" start="2018-03-02" duration="2" complete="0" expand="true"/>
+        <task id="63" name="WaterPuzzle" meeting="false" start="2018-03-05" duration="2" complete="0" expand="true"/>
+        <task id="61" name="Restart" meeting="false" start="2018-03-07" duration="2" complete="0" expand="true"/>
     </tasks>
     <resources/>
     <allocations/>
