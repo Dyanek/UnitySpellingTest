@@ -773,10 +773,10 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 833225713}
-  - component: {fileID: 833225714}
   - component: {fileID: 833225712}
-  - component: {fileID: 833225710}
   - component: {fileID: 833225711}
+  - component: {fileID: 833225714}
+  - component: {fileID: 833225710}
   m_Layer: 0
   m_Name: PlayerWizard
   m_TagString: Player
@@ -825,7 +825,11 @@ MonoBehaviour:
   StopScript: {fileID: 492397470}
   attackParticlePrefab: {fileID: 1349947998817766, guid: f9b1b0ac6d9120b428beb8487e1187fe,
     type: 2}
-  attackParticleSpawn: {fileID: 0}
+  authorizedAttacks: 1
+  uniqueWaterAttackMarkPrefab: {fileID: 1993331901703424, guid: 70f953784fe2907409b7e4a30223824c,
+    type: 2}
+  uniqueWaterAttackParticlePrefab: {fileID: 1581268240022296, guid: b0f90f122e61b4b4b96a37e1c167cc00,
+    type: 2}
   Dead: Death
 --- !u!212 &833225712
 SpriteRenderer:

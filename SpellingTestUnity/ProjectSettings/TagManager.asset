@@ -9,6 +9,7 @@ TagManager:
   - EnemyAttackParticle
   - EnemyRay
   - EnemyLightning
+  - PlayerRay
   layers:
   - Default
   - TransparentFX

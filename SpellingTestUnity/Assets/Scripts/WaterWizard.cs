@@ -139,7 +139,7 @@ public class WaterWizard : MonoBehaviour
             float opposite = Mathf.Abs(transform.position.x - playerPosition.x);
             float hypothenuse = Mathf.Sqrt((adjacent * adjacent) + (opposite * opposite));
 
-            attackAngle = (opposite / hypothenuse) * (180f / Mathf.PI);
+            attackAngle = Mathf.Atan2(opposite, adjacent) * Mathf.Rad2Deg;
 
             if (transform.position.x > playerPosition.x)
                 attackAngle = -attackAngle;
