@@ -366,7 +366,10 @@ MonoBehaviour:
   StopScript: {fileID: 0}
   attackParticlePrefab: {fileID: 1349947998817766, guid: f9b1b0ac6d9120b428beb8487e1187fe,
     type: 2}
-  attackParticleSpawn: {fileID: 0}
+  authorizedAttacks: 0
+  uniqueWaterAttackMarkPrefab: {fileID: 0}
+  uniqueWaterAttackParticlePrefab: {fileID: 0}
+  Dead: 
 --- !u!212 &833225712
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -609,7 +612,7 @@ MonoBehaviour:
   - {fileID: 129682289}
   rockPrefab: {fileID: 1919586476909636, guid: 7c25c03db1fee9c489580561f1d5fb45, type: 2}
   timeBetweenWaves: 1
-  LeveltoLoad: WaterBattleBefore
+  LevelToLoad: WaterBattleBefore
 --- !u!4 &1350936922
 Transform:
   m_ObjectHideFlags: 0
