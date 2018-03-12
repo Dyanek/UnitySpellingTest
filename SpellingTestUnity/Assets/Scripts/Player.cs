@@ -69,7 +69,7 @@ public class Player : MonoBehaviour
 
         if (enableShoot)
         {
-            if (Input.GetKeyDown(KeyCode.Space))
+            if (Input.GetKeyDown(KeyCode.Z))
                 Attack();
             else if (animator.GetBool("Attack") == true)
                 animator.SetBool("Attack", false);
@@ -78,14 +78,14 @@ public class Player : MonoBehaviour
             {
                 if (uniqueFireAttackTimer > 0)
                     uniqueFireAttackTimer -= Time.deltaTime;
-                else if (Input.GetKeyDown(KeyCode.C))
+                else if (Input.GetKeyDown(KeyCode.X))
                     FireAttack();
 
                 if (authorizedAttacks > 1)
                 {
                     if (uniqueWaterAttackTimer > 0)
                         uniqueWaterAttackTimer -= Time.deltaTime;
-                    else if (Input.GetKeyDown(KeyCode.V))
+                    else if (Input.GetKeyDown(KeyCode.C))
                         WaterAttack();
                 }
             }

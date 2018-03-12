@@ -339,8 +339,8 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 68380101}
   m_LocalRotation: {x: -0.000000029802322, y: 0.7071068, z: -0.7071068, w: -0.000000029802322}
-  m_LocalPosition: {x: 0.0187, y: 2, z: 1}
-  m_LocalScale: {x: 1.2015185, y: 1, z: 0.35}
+  m_LocalPosition: {x: -0.0735, y: 2, z: 1}
+  m_LocalScale: {x: 1.2293965, y: 1, z: 0.35}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 3
@@ -888,7 +888,9 @@ MonoBehaviour:
   StopScript: {fileID: 0}
   attackParticlePrefab: {fileID: 1349947998817766, guid: f9b1b0ac6d9120b428beb8487e1187fe,
     type: 2}
-  attackParticleSpawn: {fileID: 0}
+  authorizedAttacks: 0
+  uniqueWaterAttackMarkPrefab: {fileID: 0}
+  uniqueWaterAttackParticlePrefab: {fileID: 0}
   Dead: 
 --- !u!95 &529289534
 Animator:
@@ -2258,7 +2260,7 @@ MonoBehaviour:
     Use "Arrow Keys" to move and dodge spells.
 
 
-    Use "Spacebar" to shoot your basic attack. Now try and hit me!
+    Use "Z" to shoot your basic attack. Now try and hit me!
 
 
     Try this now'
