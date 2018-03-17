@@ -7,13 +7,13 @@ public class Player : MonoBehaviour
 {
     private float speed = 5f;
 
-    [SerializeField] private float leftEdge;
-    [SerializeField] private float rightEdge;
-    [SerializeField] private float bottomEdge;
-    [SerializeField] private float topEdge;
+    public float leftEdge;
+    public float rightEdge;
+    public float bottomEdge;
+    public float topEdge;
 
-    [SerializeField] private bool enableMovements;
-    [SerializeField] private bool enableShoot;
+    public bool enableMovements;
+    public bool enableShoot;
 
     // Player Health
     [SerializeField] public int MaxHealth;
@@ -50,6 +50,7 @@ public class Player : MonoBehaviour
     public string Dead;
 
     public AudioClip basicAttackAudio;
+    public AudioClip rayAttackAudio;
 
     void Start()
     {
@@ -113,9 +114,7 @@ public class Player : MonoBehaviour
         }
 
         if (uniqueWaterAttackCount > 0)
-        {
             WaterAttack();
-        }
     }
 
     void Attack()
@@ -189,6 +188,8 @@ public class Player : MonoBehaviour
             else
             {
                 animator.SetBool("Attack", true);
+
+                SoundManager.instance.PlaySingle(rayAttackAudio);
 
                 GameObject attackParticle = Instantiate(uniqueWaterAttackParticlePrefab, new Vector2(transform.position.x, transform.position.y + 0.15f), new Quaternion());
 

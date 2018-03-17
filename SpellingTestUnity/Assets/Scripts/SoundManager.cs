@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class SoundManager : MonoBehaviour
 {
@@ -11,15 +9,13 @@ public class SoundManager : MonoBehaviour
     {
         if (instance == null)
             instance = this;
-        else if (instance != this)
-            Destroy(gameObject);
 
         DontDestroyOnLoad(gameObject);
     }
 
     public void PlaySingle (AudioClip clip)
     {
-        efxSource.clip = clip;
-        efxSource.Play();
+        //efxSource.clip = clip;
+        efxSource.PlayOneShot(clip);
     }
 }

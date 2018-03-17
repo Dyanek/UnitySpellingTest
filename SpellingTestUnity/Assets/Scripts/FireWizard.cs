@@ -8,10 +8,10 @@ public class FireWizard : MonoBehaviour
     private float movementTimer;
     private float movementCd = 1f;
 
-    [SerializeField] private float leftEdge;
-    [SerializeField] private float rightEdge;
-    [SerializeField] private float bottomEdge;
-    [SerializeField] private float topEdge;
+    public float leftEdge;
+    public float rightEdge;
+    public float bottomEdge;
+    public float topEdge;
 
     private Animator animator;
 

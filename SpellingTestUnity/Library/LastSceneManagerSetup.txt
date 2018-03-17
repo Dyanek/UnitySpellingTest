@@ -1,4 +1,4 @@
 sceneSetups:
-- path: Assets/Scenes/FireBattle.unity
+- path: Assets/Scenes/GrandMasterBattle.unity
   isLoaded: 1
   isActive: 1

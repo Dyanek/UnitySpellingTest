@@ -8,10 +8,10 @@ public class WaterWizard : MonoBehaviour
     private float movementTimer;
     private float movementCd = 1f;
 
-    [SerializeField] private float leftEdge;
-    [SerializeField] private float rightEdge;
-    [SerializeField] private float bottomEdge;
-    [SerializeField] private float topEdge;
+    public float leftEdge;
+    public float rightEdge;
+    public float bottomEdge;
+    public float topEdge;
 
     private Animator animator;
 
@@ -37,6 +37,9 @@ public class WaterWizard : MonoBehaviour
 
     private List<KeyValuePair<GameObject, Vector2>> attackParticlesList;
     private float attackAngle;
+
+    public AudioClip basicAttackAudio;
+    public AudioClip rayAttackAudio;
 
     void Start()
     {
@@ -113,6 +116,8 @@ public class WaterWizard : MonoBehaviour
     {
         animator.SetBool("Attack", true);
 
+        SoundManager.instance.PlaySingle(basicAttackAudio);
+
         basicAttacksCount++;
 
         //The basic attack particle direction is defined by [player's position - enemy wizard position]. The particle's speed is defined in the Update function
@@ -125,7 +130,7 @@ public class WaterWizard : MonoBehaviour
 
     public void UniqueAttack()
     {
-        animator.SetBool("RayAttack", true);
+        animator.SetBool("RayAttack", true);     
 
         uniqueAttackCount++;
 
@@ -149,6 +154,8 @@ public class WaterWizard : MonoBehaviour
         }
         else if (uniqueAttackCount == 2)
         {
+            SoundManager.instance.PlaySingle(rayAttackAudio);
+
             GameObject attackParticle = Instantiate(uniqueAttackParticlePrefab, new Vector2(transform.position.x, transform.position.y - 0.15f), new Quaternion());
 
             attackParticle.transform.Rotate(new Vector3(0, 0, attackAngle));

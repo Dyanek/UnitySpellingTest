@@ -9,10 +9,10 @@ public class GrandWizard : MonoBehaviour
     private float movementTimer;
     private float movementCd = 1f;
 
-    [SerializeField] private float leftEdge;
-    [SerializeField] private float rightEdge;
-    [SerializeField] private float bottomEdge;
-    [SerializeField] private float topEdge;
+    public float leftEdge;
+    public float rightEdge;
+    public float bottomEdge;
+    public float topEdge;
 
     private Animator animator;
 
@@ -54,6 +54,10 @@ public class GrandWizard : MonoBehaviour
     private List<KeyValuePair<GameObject, Vector2>> attackParticlesList;
     private float attackAngle;
 
+    public AudioClip basicAttackAudio;
+    public AudioClip rayAttackAudio;
+    public AudioClip lightningAttackAudio;
+
     void Start()
     {
         movementTimer = movementCd;
@@ -85,7 +89,7 @@ public class GrandWizard : MonoBehaviour
             if (animator.GetBool("RayAttack"))
                 animator.SetBool("RayAttack", false);
 
-            Movements();
+            //Movements();
             attackTimer -= Time.deltaTime;
         }
         else
@@ -157,6 +161,8 @@ public class GrandWizard : MonoBehaviour
     {
         animator.SetBool("Attack", true);
 
+        SoundManager.instance.PlaySingle(basicAttackAudio);
+
         basicAttacksCount++;
 
         //The basic attack particle direction is defined by [player's position - enemy wizard position]. The particle's speed is defined in the Update function
@@ -180,6 +186,8 @@ public class GrandWizard : MonoBehaviour
         }
         else
         {
+            SoundManager.instance.PlaySingle(lightningAttackAudio);
+
             GameObject attackParticle = Instantiate(uniqueGrandAttackParticlePrefab, uniqueAttackMarkPrint, new Quaternion());
             Destroy(attackParticle, 2f);
 
@@ -191,6 +199,8 @@ public class GrandWizard : MonoBehaviour
     public void UniqueFireAttack()
     {
         animator.SetBool("Attack", true);
+
+        SoundManager.instance.PlaySingle(basicAttackAudio);
 
         uniqueFireAttackCount++;
 
@@ -228,6 +238,8 @@ public class GrandWizard : MonoBehaviour
         }
         else if (uniqueWaterAttackCount == 2)
         {
+            SoundManager.instance.PlaySingle(rayAttackAudio);
+
             GameObject attackParticle = Instantiate(uniqueWaterAttackParticlePrefab, new Vector2(transform.position.x, transform.position.y - 0.15f), new Quaternion());
 
             attackParticle.transform.Rotate(new Vector3(0, 0, attackAngle));
