@@ -30,6 +30,8 @@ public class FireWizard : MonoBehaviour
 
     private List<KeyValuePair<GameObject, Vector2>> attackParticlesList;
 
+    public AudioClip basicAttackAudio;
+
     void Start()
     {
         movementTimer = movementCd;
@@ -94,6 +96,8 @@ public class FireWizard : MonoBehaviour
     {
         animator.SetBool("Attack", true);
 
+        SoundManager.instance.PlaySingle(basicAttackAudio);
+
         basicAttacksCount++;
 
         //The basic attack particle direction is defined by [player's position - firewizard position]. The particle's speed is defined in the Update function
@@ -107,6 +111,8 @@ public class FireWizard : MonoBehaviour
     public void UniqueAttack()
     {
         animator.SetBool("Attack", true);
+
+        SoundManager.instance.PlaySingle(basicAttackAudio);
 
         uniqueAttackCount++;  
 

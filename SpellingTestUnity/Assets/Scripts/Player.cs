@@ -134,6 +134,8 @@ public class Player : MonoBehaviour
         animator.SetBool("Attack", true);
         xSpellAnimator.SetBool("IsReady", false);
 
+        SoundManager.instance.PlaySingle(basicAttackAudio);
+
         uniqueFireAttackTimer = uniqueFireAttackCd;
 
         for (float f = -0.6f; f <= 0.6f; f += 0.2f)
