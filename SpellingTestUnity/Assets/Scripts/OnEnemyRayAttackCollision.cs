@@ -1,10 +1,10 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class OnEnemyRayAttackCollision : MonoBehaviour
 {
-    private const int PLAYER_DAMAGE = 1;
+    private const int PLAYER_DAMAGE = 4;
+
+    private float attackTimer = 0.01f;
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
@@ -15,6 +15,14 @@ public class OnEnemyRayAttackCollision : MonoBehaviour
     private void OnCollisionStay2D(Collision2D collision)
     {
         if (collision.gameObject.tag == "Player")
-            collision.gameObject.GetComponent<Player>().PlayerHurt(PLAYER_DAMAGE); // Take off health
+        {
+            if (attackTimer > 0)
+                attackTimer -= Time.fixedDeltaTime;
+            else
+            {
+                attackTimer = 0.01f;
+                collision.gameObject.GetComponent<Player>().PlayerHurt(PLAYER_DAMAGE);
+            }
+        }
     }
 }

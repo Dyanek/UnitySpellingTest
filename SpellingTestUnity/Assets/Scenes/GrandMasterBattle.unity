@@ -1523,7 +1523,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cb5cb434bce91d34c9d8c26b0268795c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MaxHealth: 200
+  MaxHealth: 1000
   CurrentHealth: 0
   scene: GrandMasterBattleComplete
 --- !u!1 &1706037360

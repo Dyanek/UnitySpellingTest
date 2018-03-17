@@ -533,7 +533,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cb5cb434bce91d34c9d8c26b0268795c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MaxHealth: 100
+  MaxHealth: 250
   CurrentHealth: 0
   scene: GrandBefore
 --- !u!61 &492397476
@@ -834,6 +834,7 @@ MonoBehaviour:
     type: 2}
   Dead: Death
   basicAttackAudio: {fileID: 8300000, guid: 9d8a183d645b1c044a0eb4bb9e30eba7, type: 3}
+  rayAttackAudio: {fileID: 0}
 --- !u!212 &833225712
 SpriteRenderer:
   m_ObjectHideFlags: 0
