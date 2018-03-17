@@ -23,6 +23,8 @@ public class Player : MonoBehaviour
     public GameObject StopScript;
 
     private Animator animator;
+    private Animator xSpellAnimator;
+    private Animator cSpellAnimator;
 
     public GameObject attackParticlePrefab;
 
@@ -47,6 +49,8 @@ public class Player : MonoBehaviour
 
     public string Dead;
 
+    public AudioClip basicAttackAudio;
+
     void Start()
     {
         CurrentHealth = MaxHealth;
@@ -54,6 +58,12 @@ public class Player : MonoBehaviour
         attackParticlesList = new List<KeyValuePair<GameObject, Vector2>>();
 
         animator = gameObject.GetComponent<Animator>();
+
+        if (authorizedAttacks > 0)
+            xSpellAnimator = GameObject.Find("XAnimation").GetComponent<Animator>();
+
+        if (authorizedAttacks > 1)
+            cSpellAnimator = GameObject.Find("CAnimation").GetComponent<Animator>();
     }
 
     void Update()
@@ -78,20 +88,31 @@ public class Player : MonoBehaviour
             {
                 if (uniqueFireAttackTimer > 0)
                     uniqueFireAttackTimer -= Time.deltaTime;
-                else if (Input.GetKeyDown(KeyCode.X))
-                    FireAttack();
+                else
+                {
+                    if (!xSpellAnimator.GetBool("IsReady"))
+                        xSpellAnimator.SetBool("IsReady", true);
+                    if (Input.GetKeyDown(KeyCode.X))
+                        FireAttack();
+                }
 
                 if (authorizedAttacks > 1)
                 {
                     if (uniqueWaterAttackTimer > 0)
                         uniqueWaterAttackTimer -= Time.deltaTime;
-                    else if (Input.GetKeyDown(KeyCode.C))
-                        WaterAttack();
+                    else
+                    {
+                        if (!cSpellAnimator.GetBool("IsReady"))
+                            cSpellAnimator.SetBool("IsReady", true);
+                        if (Input.GetKeyDown(KeyCode.C))
+                            WaterAttack();
+                    }
+
                 }
             }
         }
 
-        if(uniqueWaterAttackCount > 0)
+        if (uniqueWaterAttackCount > 0)
         {
             WaterAttack();
         }
@@ -101,6 +122,8 @@ public class Player : MonoBehaviour
     {
         animator.SetBool("Attack", true);
 
+        SoundManager.instance.PlaySingle(basicAttackAudio);
+
         Vector2 particleVector = new Vector2(0, 1.5f);
 
         attackParticlesList.Add(CreateAttackParticle(2f, particleVector));
@@ -109,6 +132,7 @@ public class Player : MonoBehaviour
     void FireAttack()
     {
         animator.SetBool("Attack", true);
+        xSpellAnimator.SetBool("IsReady", false);
 
         uniqueFireAttackTimer = uniqueFireAttackCd;
 
@@ -133,6 +157,7 @@ public class Player : MonoBehaviour
         if (uniqueWaterAttackCount == 0)
         {
             animator.SetBool("Attack", true);
+            cSpellAnimator.SetBool("IsReady", false);
 
             enableMovements = false;
             enableShoot = false;
@@ -165,7 +190,7 @@ public class Player : MonoBehaviour
 
                 GameObject attackParticle = Instantiate(uniqueWaterAttackParticlePrefab, new Vector2(transform.position.x, transform.position.y + 0.15f), new Quaternion());
 
-                attackParticle.transform.Rotate(new Vector3(0, 0, attackAngle + 90));      
+                attackParticle.transform.Rotate(new Vector3(0, 0, attackAngle + 90));
                 Destroy(attackParticle, 0.4f);
 
                 enableMovements = true;
