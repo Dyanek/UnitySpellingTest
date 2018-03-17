@@ -555,10 +555,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 580e475ff19b72f48a171725cab13c95, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  leftEdge: -5.9
-  rightEdge: 5.9
-  bottomEdge: -0.75
-  topEdge: 0.3
+  leftEdge: 0.01
+  rightEdge: 0.99
+  bottomEdge: 0.04
+  topEdge: 0.22
   enableMovements: 1
   enableShoot: 1
   MaxHealth: 200
@@ -1226,10 +1226,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4d840bf9bed72134a8db294e20e26318, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  leftEdge: -5.9
-  rightEdge: 5.9
-  bottomEdge: 4
-  topEdge: 4.75
+  leftEdge: 0.01
+  rightEdge: 0.99
+  bottomEdge: 0.84
+  topEdge: 0.96
   attackParticlePrefab: {fileID: 1904101360272046, guid: 84fb1ef9ebe431346ad9d943b673de63,
     type: 2}
   uniqueWaterAttackMarkPrefab: {fileID: 1294791432546298, guid: d54eca0bc1e2ce449b70472b2131b6d5,

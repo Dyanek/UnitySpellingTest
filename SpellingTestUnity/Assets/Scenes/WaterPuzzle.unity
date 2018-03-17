@@ -424,10 +424,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 580e475ff19b72f48a171725cab13c95, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  leftEdge: -2
-  rightEdge: 2
-  bottomEdge: -0.75
-  topEdge: 0.3
+  leftEdge: 0.28
+  rightEdge: 0.72
+  bottomEdge: 0.04
+  topEdge: 0.96
   enableMovements: 1
   enableShoot: 0
   MaxHealth: 0

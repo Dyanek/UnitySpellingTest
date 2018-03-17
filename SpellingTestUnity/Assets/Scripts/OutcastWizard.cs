@@ -45,28 +45,11 @@ public class OutcastWizard : MonoBehaviour
             movementTimer -= Time.deltaTime;
             transform.Translate(movementVector * Time.deltaTime * speed);
 
-            //Blocks movement at the edge of the screen
-            if (transform.position.x < leftEdge)
-            {
-                transform.position = new Vector2(leftEdge, transform.position.y);
-                movementVector.x = -movementVector.x;
-            }
-            else if (transform.position.x > rightEdge)
-            {
-                transform.position = new Vector2(rightEdge, transform.position.y);
-                movementVector.x = -movementVector.x;
-            }
-
-            if (transform.position.y < bottomEdge)
-            {
-                transform.position = new Vector2(transform.position.x, bottomEdge);
-                movementVector.y = -movementVector.y;
-            }
-            else if (transform.position.y > topEdge)
-            {
-                transform.position = new Vector2(transform.position.x, topEdge);
-                movementVector.y = -movementVector.y;
-            }
+            //Blocks movement at the edges of the screen
+            var pos = Camera.main.WorldToViewportPoint(transform.position);
+            pos.x = Mathf.Clamp(pos.x, leftEdge, rightEdge);
+            pos.y = Mathf.Clamp(pos.y, bottomEdge, topEdge);
+            transform.position = Camera.main.ViewportToWorldPoint(pos);
         }
         else
         {

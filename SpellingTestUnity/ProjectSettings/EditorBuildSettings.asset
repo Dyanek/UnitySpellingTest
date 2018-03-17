@@ -65,6 +65,6 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Tutorial03.unity
     guid: 4ea8baeca2e2be54ea454a03e87b4e93
-  - enabled: 1
-    path: Assets/Scenes/WaterPuzzleStart.unity
-    guid: 1c9d9d516f4280c438ce3f192356570d
+  - enabled: 0
+    path: 
+    guid: 00000000000000000000000000000000

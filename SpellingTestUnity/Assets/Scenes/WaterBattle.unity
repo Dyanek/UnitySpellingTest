@@ -412,10 +412,10 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 492397472}
+  - component: {fileID: 492397473}
   - component: {fileID: 492397476}
   - component: {fileID: 492397471}
   - component: {fileID: 492397474}
-  - component: {fileID: 492397473}
   - component: {fileID: 492397475}
   m_Layer: 0
   m_Name: WaterWizard
@@ -493,10 +493,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 24a07261a553dd04695da934c75d1e21, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  leftEdge: -5.9
-  rightEdge: 5.9
-  bottomEdge: 4
-  topEdge: 4.75
+  leftEdge: 0.01
+  rightEdge: 0.99
+  bottomEdge: 0.84
+  topEdge: 0.96
   attackParticlePrefab: {fileID: 1744206480939580, guid: f80f30437df59d14a8f1c580a3133649,
     type: 2}
   uniqueAttackMarkPrefab: {fileID: 1294791432546298, guid: d54eca0bc1e2ce449b70472b2131b6d5,
@@ -812,10 +812,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 580e475ff19b72f48a171725cab13c95, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  leftEdge: -5.9
-  rightEdge: 5.9
-  bottomEdge: -0.75
-  topEdge: 0.3
+  leftEdge: 0.01
+  rightEdge: 0.99
+  bottomEdge: 0.04
+  topEdge: 0.22
   enableMovements: 1
   enableShoot: 1
   MaxHealth: 150

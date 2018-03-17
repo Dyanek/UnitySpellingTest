@@ -137,7 +137,6 @@ public class WaterWizard : MonoBehaviour
 
             float adjacent = Mathf.Abs(transform.position.y - playerPosition.y);
             float opposite = Mathf.Abs(transform.position.x - playerPosition.x);
-            float hypothenuse = Mathf.Sqrt((adjacent * adjacent) + (opposite * opposite));
 
             attackAngle = Mathf.Atan2(opposite, adjacent) * Mathf.Rad2Deg;
 
@@ -176,28 +175,11 @@ public class WaterWizard : MonoBehaviour
             movementTimer -= Time.deltaTime;
             transform.Translate(movementVector * Time.deltaTime * speed);
 
-            //Blocks movement at the edge of the screen
-            if (transform.position.x < leftEdge)
-            {
-                transform.position = new Vector2(leftEdge, transform.position.y);
-                movementVector.x = -movementVector.x;
-            }
-            else if (transform.position.x > rightEdge)
-            {
-                transform.position = new Vector2(rightEdge, transform.position.y);
-                movementVector.x = -movementVector.x;
-            }
-
-            if (transform.position.y < bottomEdge)
-            {
-                transform.position = new Vector2(transform.position.x, bottomEdge);
-                movementVector.y = -movementVector.y;
-            }
-            else if (transform.position.y > topEdge)
-            {
-                transform.position = new Vector2(transform.position.x, topEdge);
-                movementVector.y = -movementVector.y;
-            }
+            //Blocks movement at the edges of the screen
+            var pos = Camera.main.WorldToViewportPoint(transform.position);
+            pos.x = Mathf.Clamp(pos.x, leftEdge, rightEdge);
+            pos.y = Mathf.Clamp(pos.y, bottomEdge, topEdge);
+            transform.position = Camera.main.ViewportToWorldPoint(pos);
         }
         else
         {

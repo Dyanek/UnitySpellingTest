@@ -797,9 +797,9 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 529289532}
+  - component: {fileID: 529289533}
   - component: {fileID: 529289531}
   - component: {fileID: 529289534}
-  - component: {fileID: 529289533}
   m_Layer: 0
   m_Name: PlayerWizard
   m_TagString: Player
@@ -875,10 +875,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 580e475ff19b72f48a171725cab13c95, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  leftEdge: -5.9
-  rightEdge: 5.9
-  bottomEdge: -0.75
-  topEdge: 4.75
+  leftEdge: 0.01
+  rightEdge: 1
+  bottomEdge: 0.04
+  topEdge: 0.96
   enableMovements: 0
   enableShoot: 0
   MaxHealth: 0

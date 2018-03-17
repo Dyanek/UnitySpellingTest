@@ -146,7 +146,6 @@ public class Player : MonoBehaviour
 
             float opposite = Mathf.Abs(enemyPosition.y - transform.position.y);
             float adjacent = Mathf.Abs(enemyPosition.x - transform.position.x);
-            float hypothenuse = Mathf.Sqrt((adjacent * adjacent) + (opposite * opposite));
 
             attackAngle = Mathf.Atan2(opposite, adjacent) * Mathf.Rad2Deg;
 
@@ -189,16 +188,11 @@ public class Player : MonoBehaviour
         animator.SetFloat("HorizontalSpeed", axisX);
         animator.SetFloat("VerticalSpeed", axisY);
 
-        //Blocks movement at the edge of the screen
-        if (transform.position.x < leftEdge)
-            transform.position = new Vector2(leftEdge, transform.position.y);
-        else if (transform.position.x > rightEdge)
-            transform.position = new Vector2(rightEdge, transform.position.y);
-
-        if (transform.position.y < bottomEdge)
-            transform.position = new Vector2(transform.position.x, bottomEdge);
-        else if (transform.position.y > topEdge)
-            transform.position = new Vector2(transform.position.x, topEdge);
+        //Blocks movement at the edges of the screen
+        var pos = Camera.main.WorldToViewportPoint(transform.position);
+        pos.x = Mathf.Clamp(pos.x, leftEdge, rightEdge);
+        pos.y = Mathf.Clamp(pos.y, bottomEdge, topEdge);
+        transform.position = Camera.main.ViewportToWorldPoint(pos);
     }
 
     public void PlayerHurt(int Damage)
@@ -214,12 +208,6 @@ public class Player : MonoBehaviour
 
         if (Lives <= 0)
         {
-            //gameObject.SetActive(false);
-            //Stopping enemy wizard script
-            //StopScript.GetComponent<FireWizard>().enabled = false;
-            //StopScript.GetComponent<WaterWizard>().enabled = false;
-            //StopScript.GetComponent<GrandWizard>().enabled = false;
-
             // Load Death Scene
             SceneManager.LoadScene(Dead);
         }
