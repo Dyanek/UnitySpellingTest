@@ -774,7 +774,7 @@ MonoBehaviour:
   topEdge: 0.22
   enableMovements: 1
   enableShoot: 1
-  MaxHealth: 200
+  MaxHealth: 100
   CurrentHealth: 0
   Lives: 3
   RespawnPoint: {fileID: 296420210}
@@ -1523,7 +1523,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cb5cb434bce91d34c9d8c26b0268795c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MaxHealth: 1000
+  MaxHealth: 500
   CurrentHealth: 0
   scene: GrandMasterBattleComplete
 --- !u!1 &1706037360

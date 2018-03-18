@@ -820,9 +820,9 @@ MonoBehaviour:
   topEdge: 0.22
   enableMovements: 1
   enableShoot: 1
-  MaxHealth: 150
+  MaxHealth: 100
   CurrentHealth: 0
-  Lives: 3
+  Lives: 2
   RespawnPoint: {fileID: 802875214}
   StopScript: {fileID: 492397470}
   attackParticlePrefab: {fileID: 1349947998817766, guid: f9b1b0ac6d9120b428beb8487e1187fe,
