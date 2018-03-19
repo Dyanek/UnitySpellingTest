@@ -89,7 +89,7 @@ public class GrandWizard : MonoBehaviour
             if (animator.GetBool("RayAttack"))
                 animator.SetBool("RayAttack", false);
 
-            //Movements();
+            Movements();
             attackTimer -= Time.deltaTime;
         }
         else
