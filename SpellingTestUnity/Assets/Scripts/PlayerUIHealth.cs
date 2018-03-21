@@ -20,6 +20,6 @@ public class PlayerUIHealth : MonoBehaviour {
     {
         HealthBar.maxValue = PlayerHealth.MaxHealth;
         HealthBar.value = PlayerHealth.CurrentHealth;
-        HealthText.text = PlayerHealth.CurrentHealth + " / " + PlayerHealth.MaxHealth + "\nLives: " + PlayerHealth.Lives;
+        HealthText.text = PlayerHealth.CurrentHealth + " / " + PlayerHealth.MaxHealth/* + "\nLives: " + PlayerHealth.Lives*/;
 	}
 }
