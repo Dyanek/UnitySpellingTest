@@ -68,6 +68,8 @@ public class GrandWizard : MonoBehaviour
         attackParticlesList = new List<KeyValuePair<GameObject, Vector2>>();
 
         animator = gameObject.GetComponent<Animator>();
+
+        GameObject.Find("SceneHandler").GetComponent<SceneHandlerScript>().SetSceneToPlay(UnityEngine.SceneManagement.SceneManager.GetActiveScene().buildIndex);
     }
 
     void Update()

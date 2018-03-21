@@ -12,6 +12,11 @@ public class WaterPuzzle : MonoBehaviour
 
     public string LevelToLoad;
 
+    public void Start()
+    {
+        GameObject.Find("SceneHandler").GetComponent<SceneHandlerScript>().SetSceneToPlay(UnityEngine.SceneManagement.SceneManager.GetActiveScene().buildIndex);
+    }
+
     void Update()
     {
         if (timeToSpawnTimer > 0)

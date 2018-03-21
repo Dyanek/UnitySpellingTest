@@ -364,6 +364,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   slowDown: 5
+  scene: Death
 --- !u!4 &740533154
 Transform:
   m_ObjectHideFlags: 0
@@ -441,6 +442,8 @@ MonoBehaviour:
   uniqueWaterAttackMarkPrefab: {fileID: 0}
   uniqueWaterAttackParticlePrefab: {fileID: 0}
   Dead: 
+  basicAttackAudio: {fileID: 0}
+  rayAttackAudio: {fileID: 0}
 --- !u!212 &833225712
 SpriteRenderer:
   m_ObjectHideFlags: 0

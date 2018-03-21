@@ -6,8 +6,9 @@ using UnityEngine.SceneManagement;
 public class RockSlow : MonoBehaviour {
 
     public float slowDown = 5f;
+    public string scene;
 
-	public void EndGame()
+    public void EndGame()
     {
         StartCoroutine(RestartLevel());
     }
@@ -24,6 +25,6 @@ public class RockSlow : MonoBehaviour {
 
         Time.timeScale = 1f;
         Time.fixedDeltaTime = Time.fixedDeltaTime * slowDown;
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        SceneManager.LoadScene(scene);
     }
 }
