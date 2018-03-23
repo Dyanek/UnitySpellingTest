@@ -892,6 +892,9 @@ MonoBehaviour:
   uniqueWaterAttackMarkPrefab: {fileID: 0}
   uniqueWaterAttackParticlePrefab: {fileID: 0}
   Dead: 
+  basicAttackAudio: {fileID: 0}
+  rayAttackAudio: {fileID: 0}
+  playerDeadAudio: {fileID: 0}
 --- !u!95 &529289534
 Animator:
   serializedVersion: 3

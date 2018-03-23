@@ -892,6 +892,9 @@ MonoBehaviour:
   uniqueWaterAttackMarkPrefab: {fileID: 0}
   uniqueWaterAttackParticlePrefab: {fileID: 0}
   Dead: 
+  basicAttackAudio: {fileID: 0}
+  rayAttackAudio: {fileID: 0}
+  playerDeadAudio: {fileID: 0}
 --- !u!95 &529289534
 Animator:
   serializedVersion: 3
@@ -2260,10 +2263,7 @@ MonoBehaviour:
     Use "Arrow Keys" to move and dodge spells.
 
 
-    Use "Z" to shoot your basic attack. Now try and hit me!
-
-
-    Try this now'
+    Use "Z" to shoot your basic attack. Now try and hit me!'
 --- !u!222 &1962629907
 CanvasRenderer:
   m_ObjectHideFlags: 0
