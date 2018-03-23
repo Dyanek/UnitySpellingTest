@@ -835,6 +835,7 @@ MonoBehaviour:
   Dead: Death
   basicAttackAudio: {fileID: 8300000, guid: 9d8a183d645b1c044a0eb4bb9e30eba7, type: 3}
   rayAttackAudio: {fileID: 0}
+  playerDeadAudio: {fileID: 8300000, guid: adf5c948384229c40aafb472f30951ef, type: 3}
 --- !u!212 &833225712
 SpriteRenderer:
   m_ObjectHideFlags: 0

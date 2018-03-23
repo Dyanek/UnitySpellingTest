@@ -789,6 +789,7 @@ MonoBehaviour:
   Dead: Death
   basicAttackAudio: {fileID: 8300000, guid: 9d8a183d645b1c044a0eb4bb9e30eba7, type: 3}
   rayAttackAudio: {fileID: 8300000, guid: 88a9d5168dc94bf49989c29a4d6bbc3a, type: 3}
+  playerDeadAudio: {fileID: 8300000, guid: adf5c948384229c40aafb472f30951ef, type: 3}
 --- !u!212 &833225712
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1470,6 +1471,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 90c75fea9251e24459c703cb82d8b335, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playerHitAudio: {fileID: 0}
 --- !u!61 &1625443097
 BoxCollider2D:
   m_ObjectHideFlags: 0

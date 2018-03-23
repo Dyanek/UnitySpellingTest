@@ -444,6 +444,7 @@ MonoBehaviour:
   Dead: 
   basicAttackAudio: {fileID: 0}
   rayAttackAudio: {fileID: 0}
+  playerDeadAudio: {fileID: 0}
 --- !u!212 &833225712
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -680,7 +681,7 @@ MonoBehaviour:
   - {fileID: 669174070}
   - {fileID: 190675493}
   - {fileID: 1944422729}
-  rockPrefab: {fileID: 1169657428119470, guid: 7c25c03db1fee9c489580561f1d5fb45, type: 2}
+  rockPrefab: {fileID: 1127236178207176, guid: 5df5543dbfe0e0046aee364d511e4e9f, type: 2}
   timeBetweenWaves: 1.1
   LevelToLoad: WaterBattleBefore
 --- !u!4 &1350936922

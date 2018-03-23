@@ -15,7 +15,12 @@ public class SoundManager : MonoBehaviour
 
     public void PlaySingle (AudioClip clip)
     {
-        //efxSource.clip = clip;
         efxSource.PlayOneShot(clip);
+    }
+
+    public void PlayDeadAudio(AudioClip clip)
+    {
+        efxSource.clip = clip;
+        efxSource.Play();
     }
 }

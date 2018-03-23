@@ -51,6 +51,7 @@ public class Player : MonoBehaviour
 
     public AudioClip basicAttackAudio;
     public AudioClip rayAttackAudio;
+    public AudioClip playerDeadAudio;
 
     void Start()
     {
@@ -236,6 +237,7 @@ public class Player : MonoBehaviour
 
         if (Lives <= 0)
         {
+            SoundManager.instance.PlayDeadAudio(playerDeadAudio);
             // Load Death Scene
             SceneManager.LoadScene(Dead);
         }

@@ -1,4 +1,4 @@
 sceneSetups:
-- path: Assets/Scenes/Tutorial02.unity
+- path: Assets/Scenes/WaterPuzzle.unity
   isLoaded: 1
   isActive: 1
