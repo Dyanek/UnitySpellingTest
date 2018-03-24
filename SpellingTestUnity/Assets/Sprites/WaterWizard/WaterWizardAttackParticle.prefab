@@ -89,7 +89,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1f39120dd25c42941856f8e325187354, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerHitAudio: {fileID: 8300000, guid: 70c49ca6d2fc6f24f8319d0e449792a2, type: 3}
+  playerHitAudio: {fileID: 8300000, guid: f4e330c79c6405044b4f05db722e7b5c, type: 3}
 --- !u!212 &212990576121935618
 SpriteRenderer:
   m_ObjectHideFlags: 1

@@ -1,10 +1,8 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.UI;
 
-public class PlayerUIHealth : MonoBehaviour {
-
+public class PlayerUIHealth : MonoBehaviour
+{
     public Slider HealthBar;
     public Text HealthText;
     public Player PlayerHealth;

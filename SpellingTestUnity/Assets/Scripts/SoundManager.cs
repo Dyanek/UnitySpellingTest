@@ -2,6 +2,8 @@
 
 public class SoundManager : MonoBehaviour
 {
+    public AudioSource musicSource;
+
     public AudioSource efxSource;
     public static SoundManager instance = null;
 
@@ -13,7 +15,12 @@ public class SoundManager : MonoBehaviour
         DontDestroyOnLoad(gameObject);
     }
 
-    public void PlaySingle (AudioClip clip)
+    private void Start()
+    {
+        musicSource.Play();
+    }
+
+    public void PlaySingle(AudioClip clip)
     {
         efxSource.PlayOneShot(clip);
     }

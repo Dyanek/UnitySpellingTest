@@ -6,10 +6,15 @@ public class OnPlayerRayAttackCollision : MonoBehaviour
 
     private float attackTimer = 0.01f;
 
+    public AudioClip wizardHitAudio;
+
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.tag == "EnemyWizard")
+        {
             collision.gameObject.GetComponent<EnemyHealth>().EnemyHurt(PLAYER_DAMAGE); // Take off health
+            SoundManager.instance.PlaySingle(wizardHitAudio);
+        }
     }
 
     private void OnCollisionStay2D(Collision2D collision)

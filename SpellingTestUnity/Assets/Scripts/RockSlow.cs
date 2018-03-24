@@ -1,5 +1,4 @@
 ﻿using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -7,7 +6,7 @@ public class RockSlow : MonoBehaviour {
 
     public float slowDown = 5f;
     public string scene;
-
+    
     public void EndGame()
     {
         StartCoroutine(RestartLevel());

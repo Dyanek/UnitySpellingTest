@@ -1,17 +1,13 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
-public class RockDelete : MonoBehaviour {
-	
-	// Update is called once per frame
-	void Update ()
+public class RockDelete : MonoBehaviour
+{
+    // Update is called once per frame
+    void Update()
     {
-		if (transform.position.y < -3f)
-        {
+        if (transform.position.y < -3f)
             Destroy(gameObject);
-        }
-	}
+    }
 
     void OnCollisionEnter2D()
     {

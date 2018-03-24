@@ -365,6 +365,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   slowDown: 5
   scene: Death
+  rockHit: {fileID: 8300000, guid: d773ce31b3ab4194d9ea6dcda07a888d, type: 3}
 --- !u!4 &740533154
 Transform:
   m_ObjectHideFlags: 0
