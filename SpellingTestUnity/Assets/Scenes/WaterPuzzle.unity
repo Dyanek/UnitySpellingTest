@@ -682,7 +682,7 @@ MonoBehaviour:
   - {fileID: 190675493}
   - {fileID: 1944422729}
   rockPrefab: {fileID: 1127236178207176, guid: 5df5543dbfe0e0046aee364d511e4e9f, type: 2}
-  timeBetweenWaves: 1.1
+  timeBetweenWaves: 1.2
   LevelToLoad: WaterBattleBefore
 --- !u!4 &1350936922
 Transform:

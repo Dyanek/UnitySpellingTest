@@ -27,7 +27,7 @@ public class WaterPuzzle : MonoBehaviour
             timeToSpawnTimer = timeBetweenWaves;
         }
 
-        if (Time.timeSinceLevelLoad >= 37)
+        if (Time.timeSinceLevelLoad >= 27)
         {
             Debug.Log("Time up");
             SceneManager.LoadScene(LevelToLoad);
