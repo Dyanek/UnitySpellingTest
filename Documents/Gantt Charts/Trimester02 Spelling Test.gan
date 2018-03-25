@@ -46,6 +46,7 @@
         <task id="63" name="WaterPuzzle" meeting="false" start="2018-03-05" duration="2" complete="0" expand="true"/>
         <task id="61" name="Restart" meeting="false" start="2018-03-07" duration="2" complete="0" expand="true"/>
         <task id="64" name="Player Attacks" meeting="false" start="2018-03-09" duration="2" complete="0" expand="true"/>
+        <task id="65" name="Audio" meeting="false" start="2018-03-12" duration="8" complete="0" expand="true"/>
     </tasks>
     <resources/>
     <allocations/>
