@@ -174,20 +174,21 @@ public class GrandWizard : MonoBehaviour
         attackParticlesList.Add(CreateAttackParticle(2f, particleVector));
     }
 
-    public void UniqueGrandAttack()
+    public void UniqueGrandAttack() //Lightning attack
     {
-        if (uniqueGrandAttackCount == 0)
+        if (uniqueGrandAttackCount == 0) //First phase of the attack (casting)
         {
-            uniqueAttackMarkPrint = new Vector2(Random.Range(-5.9f, 5.9f), Random.Range(-0.75f, 0.3f));
+            uniqueAttackMarkPrint = new Vector2(Random.Range(-5.9f, 5.9f), Random.Range(-0.75f, 0.3f)); //Defines a random position in the zone where the player is
             GameObject attackMark = Instantiate(uniqueGrandAttackMarkPrefab, uniqueAttackMarkPrint, new Quaternion());
             Destroy(attackMark, 0.75f);
 
+            //The two phases system works like the water attack
             uniqueGrandAttackTimer = uniqueGrandAttackCd;
             uniqueGrandAttackCount++;
         }
-        else
+        else //Second phase of the attack
         {
-            SoundManager.instance.PlaySingle(lightningAttackAudio);
+            SoundManager.instance.PlaySingle(lightningAttackAudio); //Plays the sound
 
             GameObject attackParticle = Instantiate(uniqueGrandAttackParticlePrefab, uniqueAttackMarkPrint, new Quaternion());
             Destroy(attackParticle, 2f);
@@ -259,7 +260,7 @@ public class GrandWizard : MonoBehaviour
 
     public void Movements()
     {
-        if (movementTimer > 0)
+        if (movementTimer > 0) //Moves the wizard
         {
             animator.SetFloat("HorizontalSpeed", movementVector.x);
             animator.SetFloat("VerticalSpeed", movementVector.y);
@@ -267,20 +268,20 @@ public class GrandWizard : MonoBehaviour
             movementTimer -= Time.deltaTime;
             transform.Translate(movementVector * Time.deltaTime * speed);
 
-            //Blocks movement at the edges of the screen
+            //Blocks the wizard's movements at the edges of the screen
             var pos = Camera.main.WorldToViewportPoint(transform.position);
             pos.x = Mathf.Clamp(pos.x, leftEdge, rightEdge);
             pos.y = Mathf.Clamp(pos.y, bottomEdge, topEdge);
             transform.position = Camera.main.ViewportToWorldPoint(pos);
         }
-        else
+        else //Defines a new movement vector and resets the cooldown of the movement
         {
             movementTimer = movementCd;
             movementVector = DefineMovementVector();
         }
     }
 
-    public Vector2 DefineMovementVector()
+    public Vector2 DefineMovementVector() //Defines a radom vector to move the wizard
     {
         return new Vector2(Random.Range(-0.5f, 0.5f), Random.Range(-0.3f, 0.3f));
     }

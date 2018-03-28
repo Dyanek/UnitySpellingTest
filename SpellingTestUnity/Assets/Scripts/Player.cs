@@ -5,15 +5,15 @@ using UnityEngine.SceneManagement;
 
 public class Player : MonoBehaviour
 {
-    private float speed = 5f;
+    private float speed = 5f; //Manages the speed of the player's movements
 
-    public float leftEdge;
-    public float rightEdge;
-    public float bottomEdge;
-    public float topEdge;
+    public float leftEdge; //Defines the left limit of the map the player cannot cross
+    public float rightEdge; //Defines the right limit of the map the player cannot cross
+    public float bottomEdge; //Defines the top limit of the map the player cannot cross
+    public float topEdge; //Defines the left bottom of the map the player cannot cross
 
-    public bool enableMovements;
-    public bool enableShoot;
+    public bool enableMovements; //Enables the player's movements or not depending of the scene
+    public bool enableShoot; //Enables the player to attack or not depending of the scene
 
     // Player Health
     [SerializeField] public int MaxHealth;
@@ -22,33 +22,34 @@ public class Player : MonoBehaviour
     [SerializeField] private Transform RespawnPoint;
     public GameObject StopScript;
 
-    private Animator animator;
-    private Animator xSpellAnimator;
-    private Animator cSpellAnimator;
+    private Animator animator; //The animator object permitting to change the player's animations
+    private Animator xSpellAnimator; //The animator object permitting to change the casting animation of the spray attack
+    private Animator cSpellAnimator; //The animator object permitting to change the casting animation of the ray attack
 
-    public GameObject attackParticlePrefab;
+    public GameObject attackParticlePrefab; //Attack particle object
 
-    public int authorizedAttacks;
+    public int authorizedAttacks; //Permits to manage which attack is available or not
 
     private float uniqueFireAttackTimer;
-    private float uniqueFireAttackCd = 1f;
+    private float uniqueFireAttackCd = 1f; //Cooldown of the spray attack
 
-    public GameObject uniqueWaterAttackMarkPrefab;
-    public GameObject uniqueWaterAttackParticlePrefab;
+    public GameObject uniqueWaterAttackMarkPrefab; //Ray mark object (before it makes damages)
+    public GameObject uniqueWaterAttackParticlePrefab; //Ray attack object
 
     private float uniqueWaterAttackTimer = 0;
-    private float uniqueWaterAttackCd = 2f;
+    private float uniqueWaterAttackCd = 2f; //Cooldown of the water attack
 
     private float uniqueWaterAttackParticleTimer = 0.3f;
-    private float uniqueWaterAttackParticleCd = 0.3f;
+    private float uniqueWaterAttackParticleCd = 0.3f; //Length of the ray attack
 
     private int uniqueWaterAttackCount = 0;
-    private float attackAngle;
+    private float attackAngle; //Angle calculated to hit the enemy wizard
 
-    private List<KeyValuePair<GameObject, Vector2>> attackParticlesList;
+    private List<KeyValuePair<GameObject, Vector2>> attackParticlesList; //Manages the particles being thrown to make them move
 
     public string Dead;
 
+    //Audio part
     public AudioClip basicAttackAudio;
     public AudioClip rayAttackAudio;
     public AudioClip playerDeadAudio;
@@ -70,41 +71,40 @@ public class Player : MonoBehaviour
 
     void Update()
     {
-        //Deletes every destroyed particle from the list
-        attackParticlesList = attackParticlesList.Where(kvp => kvp.Key != null).ToList();
+        attackParticlesList = attackParticlesList.Where(kvp => kvp.Key != null).ToList(); //Deletes every destroyed particle from the list
 
-        foreach (KeyValuePair<GameObject, Vector2> kvp in attackParticlesList)
+        foreach (KeyValuePair<GameObject, Vector2> kvp in attackParticlesList) //Calculates where the player's particles must be in the map
             kvp.Key.transform.Translate(kvp.Value * Time.deltaTime * 5f);
 
         if (enableMovements)
-            Movement();
+            Movement(); //Permits the player to move
 
-        if (enableShoot)
+        if (enableShoot) 
         {
             if (Input.GetKeyDown(KeyCode.Z))
-                Attack();
-            else if (animator.GetBool("Attack") == true)
+                Attack(); //Basic attack
+            else if (animator.GetBool("Attack") == true) //Changes the player's animations
                 animator.SetBool("Attack", false);
 
-            if (authorizedAttacks > 0)
+            if (authorizedAttacks > 0) //Permits to use the fire attack
             {
-                if (uniqueFireAttackTimer > 0)
+                if (uniqueFireAttackTimer > 0) //Disables the player to use the fire attack if the cooldown isn't over
                     uniqueFireAttackTimer -= Time.deltaTime;
-                else
+                else //Enables the player to use the fire attack if the cooldown is over
                 {
-                    if (!xSpellAnimator.GetBool("IsReady"))
+                    if (!xSpellAnimator.GetBool("IsReady")) //Changes the animation of the cooldown
                         xSpellAnimator.SetBool("IsReady", true);
                     if (Input.GetKeyDown(KeyCode.X))
                         FireAttack();
                 }
 
-                if (authorizedAttacks > 1)
+                if (authorizedAttacks > 1) //Permits to use the water attack
                 {
-                    if (uniqueWaterAttackTimer > 0)
+                    if (uniqueWaterAttackTimer > 0) //Disables the player to use the water attack if the cooldown isn't over
                         uniqueWaterAttackTimer -= Time.deltaTime;
-                    else
+                    else //Enables the player to use the fire attack if the cooldown is over
                     {
-                        if (!cSpellAnimator.GetBool("IsReady"))
+                        if (!cSpellAnimator.GetBool("IsReady")) //Changes the animation of the cooldown
                             cSpellAnimator.SetBool("IsReady", true);
                         if (Input.GetKeyDown(KeyCode.C))
                             WaterAttack();
@@ -114,15 +114,15 @@ public class Player : MonoBehaviour
             }
         }
 
-        if (uniqueWaterAttackCount > 0)
+        if (uniqueWaterAttackCount > 0) // If the water attack is being thrown, the player can't move and attack
             WaterAttack();
     }
 
-    void Attack()
+    void Attack() //Basick attack
     {
         animator.SetBool("Attack", true);
 
-        SoundManager.instance.PlaySingle(basicAttackAudio);
+        SoundManager.instance.PlaySingle(basicAttackAudio); //Plays the sound of the shoot
 
         Vector2 particleVector = new Vector2(0, 1.5f);
 
@@ -134,7 +134,7 @@ public class Player : MonoBehaviour
         animator.SetBool("Attack", true);
         xSpellAnimator.SetBool("IsReady", false);
 
-        SoundManager.instance.PlaySingle(basicAttackAudio);
+        SoundManager.instance.PlaySingle(basicAttackAudio); //Plays the sound of the shoot
 
         uniqueFireAttackTimer = uniqueFireAttackCd;
 
@@ -156,25 +156,26 @@ public class Player : MonoBehaviour
 
     void WaterAttack()
     {
-        if (uniqueWaterAttackCount == 0)
+        if (uniqueWaterAttackCount == 0) //If the water attack is in the first phase (casting)
         {
             animator.SetBool("Attack", true);
             cSpellAnimator.SetBool("IsReady", false);
 
-            enableMovements = false;
-            enableShoot = false;
+            enableMovements = false; //Disables the player's movements
+            enableShoot = false; //Disables the player's attacks
 
-            uniqueWaterAttackTimer = uniqueWaterAttackCd;
+            uniqueWaterAttackTimer = uniqueWaterAttackCd; //Sets the cooldown of the cast
             uniqueWaterAttackCount = 1;
 
             GameObject attackParticle = Instantiate(uniqueWaterAttackMarkPrefab, new Vector2(transform.position.x, transform.position.y + 0.15f), new Quaternion());
 
+            //Calculates the attack angle between the enemy wizard and the player
             Vector3 enemyPosition = GameObject.FindGameObjectWithTag("EnemyWizard").transform.position;
 
             float opposite = Mathf.Abs(enemyPosition.y - transform.position.y);
             float adjacent = Mathf.Abs(enemyPosition.x - transform.position.x);
 
-            attackAngle = Mathf.Atan2(opposite, adjacent) * Mathf.Rad2Deg;
+            attackAngle = Mathf.Atan2(opposite, adjacent) * Mathf.Rad2Deg; //Trigonometry formula
 
             if (transform.position.x > enemyPosition.x)
                 attackAngle = -attackAngle + 180;
@@ -182,11 +183,11 @@ public class Player : MonoBehaviour
             attackParticle.transform.Rotate(new Vector3(0, 0, attackAngle + 90));
             Destroy(attackParticle, 0.3f);
         }
-        else
+        else //If the water attack is in the second phase (attack)
         {
-            if (uniqueWaterAttackParticleTimer > 0)
+            if (uniqueWaterAttackParticleTimer > 0) //If the cast is not over
                 uniqueWaterAttackParticleTimer -= Time.deltaTime;
-            else
+            else //If the cast is over
             {
                 animator.SetBool("Attack", true);
 
@@ -197,10 +198,10 @@ public class Player : MonoBehaviour
                 attackParticle.transform.Rotate(new Vector3(0, 0, attackAngle + 90));
                 Destroy(attackParticle, 0.4f);
 
-                enableMovements = true;
-                enableShoot = true;
+                enableMovements = true; //Re enables the player's movements
+                enableShoot = true; //Re enables the player's attacks
 
-                uniqueWaterAttackParticleTimer = uniqueWaterAttackParticleCd;
+                uniqueWaterAttackParticleTimer = uniqueWaterAttackParticleCd; //Sets the cooldown of the attack
                 uniqueWaterAttackCount = 0;
             }
         }
